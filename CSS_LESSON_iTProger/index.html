@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Advanced Tags
+    </h1>
+    <br>
+
+    <h2>Progress</h2>
+    <label for="loading-bar">Loading</label>
+    <progress id="loading-bar" value="50" max="100"></progress>
+    <!-- -------------------------------------------------- -->
+    <hr>
+    <h2>Datalist</h2>
+    <label for="framework">Frameworks</label>
+    <input type="text" name="framework" id="framework" list="favourite-frameworks">
+    <datalist id="favourite-frameworks">
+        <option value="React">React</option>
+        <option value="Vue"></option>
+        <option value="Angular"></option>
+    </datalist>
+    <!-- -------------------------------------------------- -->
+    <hr>
+    <h2>Optgroup</h2>
+    <select name="sport" id="sport">
+        <optgroup label="Played With a Bat">
+            <option value="Cricket">Cricket</option>
+            <option value="Baseball">Baseball</option>
+        </optgroup>
+        <optgroup label="Played With a raquet">
+            <option value="Badminton">Badminton</option>
+            <option value="Tennis">Tennis</option>
+        </optgroup>
+    </select>
+    <!-- -------------------------------------------------- -->
+    <hr>
+    <h2>Abbr</h2>
+    <p>
+        <abbr title="World Health Organization">WHO</abbr> is an organization.
+    </p>
+    <!-- -------------------------------------------------- -->
+    <hr>
+    <h2>Code</h2>
+    <p>Can not be translated to another language.</p>
+    <p>
+        <code>console.log('Hello World')</code>
+    </p>
+    <!-- -------------------------------------------------- -->
+    <hr>
+    <h2>Quotes around text</h2>
+    <p>
+        <q>Life is what happens when you're busy making other plans.</q>
+    </p>
+</body>
+</html>

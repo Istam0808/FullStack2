@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s
+}
+
+nav {
+    padding: 10px 300px;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav a {
+    float: right;
+    padding: 25px 10px 5px 10px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 1.2em
+}
+
+#logo {
+    padding: 10px 10px 5px 10px;
+}
+
+#logo span {
+    font-size: 18px;
+}
+
+header .intro {
+    padding: 50px 300px;
+    background-color: darkgray;
+    overflow: hidden;
+}
+
+header .intro>div {
+    width: 50%;
+    float: left;
+}
+
+header .intro .left {
+    padding-right: 20px;
+}
+
+header .intro .right {
+    padding-left: 70px;
+}
+
+header .intro .left>* {
+    margin-bottom: 20px;
+}
+
+header .intro .left h1,
+header .intro .left h4 {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .intro .left p {
+    margin: 20px 0;
+    font-family: monospace;
+
+}
+
+header .intro .left button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #111;
+    color: snow;
+    cursor: pointer;
+    margin: 100px 0 20px 0;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+main .section {
+    padding: 50px 300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main .section>div {
+    width: 50%;
+    float: left;
+}
+
+main .section .left {
+    padding-right: 20px;
+}
+
+main .section .right {
+    padding-left: 70px;
+}
+
+main .section .right button {
+    cursor: pointer;
+    padding: 20px 30px;
+    background-color: black;
+    color: snow;
+    border-radius: 10px;
+    border: 0px solid white;
+}
+
+body{
+    background: url(700176.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+    main .cards {
+        padding: 30px 300px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    main .cards .cd1 {
+        border-radius: 10px;
+        float: left;
+        width: 30%;
+        background-color: lightgray;
+    }
+
+    main .cards .cd1 .cd1-text {
+        padding: 10px 80px 35px 50px;
+    }
+
+    main .cards .cd1 .cd1-text h4 {
+        float: left;
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    main .cards .cd1 .cd1-text .cd1-price {
+        float: right;
+        color: orangered;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main .cards .cd1 .cd1-lorem {
+        text-align: justify;
+        padding: 0 30px 30px 30px;
+    }
+
+
+    main .cards .cd2 {
+        float: left;
+        margin-left: 65px;
+        border-radius: 10px;
+        width: 30%;
+        background-color: lightgray;
+    }
+
+    main .cards .cd2 .cd2-text {
+        padding: 10px 80px 35px 50px;
+    }
+
+    main .cards .cd2 .cd2-text h4 {
+        float: left; 
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    main .cards .cd2 .cd2-text .cd2-price {
+        float: right;
+        color: orangered;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main .cards .cd2 .cd2-lorem {
+        text-align: justify;
+        padding: 0 30px 30px 30px;
+    }
+
+
+    
+    main .cards .cd3 {
+        margin-left: 65px;
+        float: left;
+        border-radius: 10px;
+        width: 30%;
+        background-color: lightgray;
+    }
+
+    main .cards .cd3 .cd3-text {
+        padding: 10px 80px 35px 50px;
+    }
+
+    main .cards .cd3 .cd3-text h4 {
+        float: left;
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    main .cards .cd3 .cd3-text .cd3-price {
+        float: right;
+        color: orangered;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main .cards .cd3 .cd3-lorem {
+        text-align: justify;
+        padding: 0 30px 30px 30px;
+    }
+
+    .cards .cd1 .span,.cards .cd2 .span, .cards .cd3 .span{
+        
+        display: inline-block;
+        padding: 20px 10px 50px 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .rating {
+        padding: 80px 300px;
+        color: rgb(23, 23, 23);
+        background-color: lightgray;
+    }
+
+    .rating h1 {
+        text-align: center;
+    }
+
+    .rating .elements {
+        padding-top: 60px;
+        overflow: hidden;
+    }
+
+    .rating .elements h2,
+    h4{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .rating .element-1,
+    .element-2,
+    .element-3,
+    .element-4 {
+        float: left;
+        background-color: snow;
+        padding: 30px 50px 30px 30px;
+        width: 20%;
+    }
+
+    .avatar img,
+    .avatar2 img,
+    .avatar3 img,
+    .avatar4 img {
+        float: left;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+
+    .avatar h4,
+    .avatar2 h4,
+    .avatar3 h4,
+    .avatar4 h4 {
+        margin-top: 15%
+    }
+
+    .avatar,.avatar2,.avatar3,.avatar4 {
+        margin-top: 15px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    .element-1, .element-2, .element-3, .element-4{
+        margin: 0 0 0 60px;
+    }
+
+    ::-webkit-scrollbar {
+        background-color: rgb(169, 169, 169);
+        width: 9px;
+        padding: 0 5px 0 5px;
+        
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: rgba(255, 68, 0, 0.700);
+        border-radius: 10px;
+    }
+
+    .last{
+        padding: 100px 300px;
+        background-color: rgba(255, 255, 255, 0.492);
+        overflow: hidden;
+    }
+    .last .left{
+    width: 50%;
+    float: left;
+    }
+    .last .left p{
+        margin-bottom: 30px;
+        margin-top: 40px;
+        text-align: justify;
+        font-size: 1.2em;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .last .right img{
+        float: left;
+        padding-left: 40px;
+    }
+
+    footer{
+        padding: 50px 300px;
+        background-color: lightgray ;
+        overflow: hidden;
+    }
+    footer img{
+    float: left;
+    }
+
+    footer .Doorman a, footer .Contact a, footer .Social a{
+        font-size: 1.2em;
+        margin-top: 3px;
+        margin-left: 20%;
+        display: block;
+        color: rgb(49, 49, 49);
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+
+    footer .Doorman  .let1, .Contact  .let1, .Social .let1{
+    padding: 30px 50px 20px 0;
+    
+    }
+
+    footer .Doorman{
+    float: left;
+    }
+
+    footer .Contact {
+    float: left;
+    }
+    footer .Social{
+    float: left;
+    }

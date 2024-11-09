@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<body style="background-color: rgb(255, 185, 232);">
+    <h1>Registration Form</h1>
+    <form>
+    <table>
+        <tr>
+            <td align="right">
+                <label for="Username">User name :</label>
+            </td>
+            <td>
+                <input id="Username" type="text" style="border-color: rgba(203, 0, 0, 0.798); border-width: 1px;">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="password">Password :</label>
+            </td>
+            <td>
+                <input id="password" type="password" style="border-color: rgba(203, 0, 0, 0.798); border-width: 1px;">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="name">Name :</label>
+            </td>
+            <td>
+                <input id="name" type="text" style="border-color: rgba(203, 0, 0, 0.798); border-width: 1px;">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="Address">Address :</label>
+            </td>
+            <td>
+                <input id="Address" type="text" style="border-color: rgba(203, 0, 0, 0.798); border-width: 1px;">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="Country">Country :</label>
+            </td>
+            <td>
+                <select id="Country">
+                    <option disabled selected>(Please select a country)</option>
+                    <option>Uzbekistan</option>
+                    <option>Iran</option>
+                    <option>United States</option>
+                    <option>Portugal</option>
+                    <option>Argentina</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="Email">Email :</label>
+            </td>
+            <td>
+                <input id="Email" type="email" style="border-color: rgba(203, 0, 0, 0.798); border-width: 1px;">
+            </td>
+        </tr>
+
+        <tr></tr>
+
+        <tr>
+            <td align="right">
+                <label for="Sex">Gender :</label>
+            </td>
+
+
+            <td> <input type="radio" name="Sex" id="Male" value="Male">
+                <label for="Male"
+                    style=" border: 1px solid rgba(203, 0, 0, 0.798); background-color: rgba(9, 25, 255, 0.839); padding: 5px; display: inline-block;">Male</label>
+                <input type="radio" name="Sex" id="Female" value="Female">
+                <label for="Female"
+                    style=" border: 1px solid rgba(203, 0, 0, 0.798); background-color: rgba(255, 48, 48, 0.797); padding: 5px; display: inline-block;">Female</label>
+            </td>
+        </tr>
+
+        <tr></tr>
+        <tr>
+            <td align="right">
+                <label for="Language">Language :</label>
+            </td>
+
+            <td> <input type="checkbox" name="Language" id="English" value="English">
+                <label for="English"
+                    style=" border: 1px solid rgba(203, 0, 0, 0.798); background-color: rgba(255, 48, 48, 0.797); padding: 5px; display: inline-block;">English</label>
+                <input type="checkbox" name="Language" id="Non_English" value="Non_English">
+                <label for="Non_English"
+                    style=" border: 1px solid rgba(203, 0, 0, 0.798); background-color: rgba(255, 48, 48, 0.797); padding: 5px; display: inline-block;">Non_English</label>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label for="About">About :</label>
+            </td>
+
+            <td> <textarea placeholder="ведите что то" rows="5" style="width: 160px; height: 25px;"></textarea></td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td align="left">
+                <button type="reset">Submit</button>
+            </td>
+        </tr>
+
+
+
+    </form>
+
+    </table>
+</body>
+
+</html>

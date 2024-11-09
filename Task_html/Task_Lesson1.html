@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="content">Home<br>
+                Contact<br> About</td>
+            <td class="img"><img src="photoo.jpg"></td>
+            <td class="td-1"></td>
+        </tr>
+    </table>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    table {
+        width: 880px;
+        margin: 0 auto;
+        background-color: gray;
+    }
+
+    .content {
+        width: 0;
+        color: gray;
+        font-size: 0px;
+    }
+
+    .img {
+        border: 1px solid snow;
+        width: 440px;
+        height: 200px;
+    }
+
+    .td-1 {
+        width: 0;
+    }
+
+    table:hover .content {
+        width: 1px;
+        font-size: 19px;
+        color: snow;
+        padding-left: 10px;
+    }
+
+    table:hover .img {
+        width: 200px;
+
+    }
+
+    table:hover .td-1 {
+        width: 60px;
+
+    }
+</style>
+
+</html>

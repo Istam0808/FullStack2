@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <span style="color: red;">E</span>
+        <span style="color: blue;"><sub>X</sub></span>
+        <span style="color: purple;"><sup>A</sup></span>
+        <span>M</span>
+    </div>
+
+    <div class="content">
+        <div class="column">
+            LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. POSSIMUS ALIAS SINT BEATAE ODIT HARUM AMET MOLESTIAS. ESSE DOLORES TEMPORA SINT, QUAM OBCAECATI, ACCUSAMUS QUAEAT MOLESTIAS, IMPEDIT NAM EX AUTEM IUSTO.
+        </div>
+        <div class="column">
+            LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. POSSIMUS ALIAS SINT BEATAE ODIT HARUM AMET MOLESTIAS. ESSE DOLORES TEMPORA SINT, QUAM OBCAECATI, ACCUSAMUS QUAEAT MOLESTIAS, IMPEDIT NAM EX AUTEM IUSTO.
+        </div>
+        <div class="column">
+            LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. POSSIMUS ALIAS SINT BEATAE ODIT HARUM AMET MOLESTIAS. ESSE DOLORES TEMPORA SINT, QUAM OBCAECATI, ACCUSAMUS QUAEAT MOLESTIAS, IMPEDIT NAM EX AUTEM IUSTO.
+        </div>
+        <div class="side-box">
+            <table>
+                <tr>
+                    <th>FIRST</th>
+                    <th>SECOND</th>
+                    <th>THIRD</th>
+                </tr>
+                <tr>
+                    <td>FIRST</td>
+                    <td></td>
+                    <td><img src="#" alt="Image" width="50" height="50"></td>
+                </tr>
+            </table>
+            <ol>
+                <li>FIRST</li>
+                <li>SECOND</li>
+                <li>THIRD</li>
+            </ol>
+            <ul class="highlight">
+                <li>FIRST</li>
+                <li>SECOND</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        background-color: #F0F0F0;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: #A9A9A9;
+        padding: 20px;
+        text-align: left;
+    }
+    .header span {
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #D3D3D3;
+    }
+    .column {
+        flex: 1;
+        margin-right: 20px;
+        text-align: justify;
+    }
+    .column:last-child {
+        margin-right: 0;
+    }
+    .side-box {
+        width: 250px;
+        border: 2px solid red;
+        padding: 10px;
+    }
+    .side-box table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .side-box table, .side-box th, .side-box td {
+        border: 1px solid black;
+    }
+    .side-box th, .side-box td {
+        text-align: center;
+        padding: 5px;
+    }
+    .side-box ol {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    .side-box ul {
+        list-style-type: circle;
+        padding-left: 20px;
+    }
+    .side-box li {
+        margin-bottom: 5px;
+    }
+    .side-box .highlight {
+        background-color: gray;
+        color: red;
+    }
+</style>
+
+</html>

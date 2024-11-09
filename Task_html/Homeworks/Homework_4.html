@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #333;    color: snow;">
+    <table>
+        <tr>
+            <td>
+                <img src="4.jpg" width="100" height="100" class="foto1">
+            </td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque ullam cupiditate iure adipisci
+                voluptatibus accusamus libero cum itaque hic nesciunt totam corporis eligendi sit inventore voluptate
+                asperiores officia, perferendis velit! Reprehenderit quas dolor iste repellendus. Odio enim laudantium
+                illum quod vitae eos nobis modi voluptatibus, nihil nam ullam doloremque deserunt aperiam minus iure
+                esse architecto beatae pariatur vel ipsam tenetur? Maiores possimus esse quis odit porro atque nostrum
+                ullam, adipisci dolor sunt illo cupiditate qui nobis quaerat ipsum? Nostrum dolores soluta quasi, maxime
+                atque veniam vitae inventore debitis possimus quibusdam doloremque. Excepturi rem quia molestiae.
+
+                <img src="3.jpg" class="img">
+            </td>
+            <td>
+                <img src="4.jpg" width="100" height="100" class="foto2">
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+        transition: 0.5s;
+    }
+
+    .img {
+        width: 96%;
+        height: 45vh;
+        margin: 0 auto;
+    }
+
+    .foto1 {
+        border: 0px solid white;
+        border-radius: 50%;
+        margin-bottom: 235%;
+
+    }
+
+
+    .foto2 {
+        border: 0px solid white;
+        border-radius: 50%;
+        margin-bottom: -165%;
+
+    }
+
+    table:hover .foto1 {
+        margin-bottom: -165%;
+    }
+
+    table:hover .foto2 {
+        margin-bottom: 235%;
+
+    }
+
+    table:hover .img {
+        border: 15px inset green;
+        border-radius: 4%;
+    }
+</style>
+
+</html>

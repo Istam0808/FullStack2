@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <p>Lorem ipsum dolor sit amet <span class="text-border"> adipisicing elit.</span> Ipsam nobis voluptatum blanditiis, nesciunt
+            exercitationem consectetur vel quaerat doloremque ea atque, cupiditate voluptatibus pariatur! Voluptates
+            magni quam consequatur. Sequi ex adipisci autem veniam. Dicta possimus laudantium dolore veritatis
+            commodi porro, natus sunt optio odio quos itaque explicabo suscipit exercitationem. Molestiae eveniet,
+            deleniti perspiciatis expedita obcaecati  cumque quaerat nulla dolorum quis praesentium
+            ad mollitia similique cupiditate <span class="text-border">asperiores nihil</span>amet! Facere architecto ex cum asperiores quam tenetur voluptatum quo,
+            aliquam et dolore nobis odit dignissimos, laudantium quibusdam beatae ad dolores laborum deleniti alias
+            quasi. Inventore, quae. Necessitatibus nesciunt quis consequatur deserunt numquam eligendi?.</p>
+        <div>
+            <img src="4.jpg" width="150" height="150">
+            <img src="4.jpg" width="150" height="150">
+            <img src="4.jpg" width="150" height="150">
+            <div class="colum">
+                <img src="4.jpg" width="150" height="150">
+                <img src="4.jpg" width="150" height="150">
+                <img src="4.jpg" width="150" height="150">
+            </div>
+            <div class="collum">
+                <img src="4.jpg" width="150" height="150">
+                <img src="4.jpg" width="150" height="150">
+                <img src="4.jpg" width="150" height="150">
+            </div>
+        </div>
+    </main>
+</body>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.6s;
+    }
+
+    main {
+        width: 80%;
+        background-color: #333;
+        margin: 10px auto;
+        border-radius: 5px;
+        color: snow;
+        text-align: center;
+        
+    }
+
+    main:hover p span{
+        border: 5px solid green;
+        background-color: blue;
+    }
+    main:hover{
+    background: url('https://staticg.sportskeeda.com/editor/2023/11/c42da-16994209260602-1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    padding: 50px;
+    background-color: #333;
+    background-blend-mode: difference;
+    }
+
+    main img:hover{
+    border: 10px double green;
+    }
+
+    main p span:hover{
+    padding: 20px 100px ;
+    display: inline-block;
+    border-radius: 10px;
+    }
+
+    main p {
+    padding: 20px;
+    }
+
+    .colum img {
+        opacity: 0;
+    }
+    .collum img:nth-child(2){
+    opacity: 0;
+    }
+
+</style>
+
+</html>

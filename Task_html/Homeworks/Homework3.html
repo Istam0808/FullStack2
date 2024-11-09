@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="Lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iusto cumque temporibus,
+                doloremque eius eveniet incidunt consectetur quam pariatur et. Eum, error voluptates nesciunt ad amet
+                corporis quibusdam alias laboriosam?</td>
+        </tr>
+        <div class="picture-1">
+            <tr>
+                <td>
+                    <img src="4.jpg" class="foto1">
+                    <img src="4.jpg" class="foto2">
+                </td>
+            </tr>
+            <tr class="none">
+
+            </tr>
+        </div>
+
+
+
+    </table>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        border: 0px solid black;
+        border-radius: 50%;
+        margin-left: 40%;
+    }
+
+    tr:hover .foto1 {
+        margin-left: 70%;
+    }
+    tr:hover .foto2 {
+        margin-left: 15%;
+    }
+
+    img:hover{
+    border: 7px dotted blue;
+    }
+
+    table {
+        margin: 0 auto;
+        width: 70%;
+        height: 70vh;
+        background-color: black;
+        color: blueviolet;
+        background: url('4.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgb(000, 000, 000, 1);
+        background-blend-mode: darken;
+    }
+
+    table:hover .Lorem {
+        padding: 20px;
+        color: aqua
+    }
+
+    .Lorem:hover {
+        transition: 1s;
+        text-decoration: underline dotted 3px yellow;
+    }
+
+    table:hover {
+        width: 90%;
+        height: 100vh;
+        background-color: rgb(000, 000, 000, 0.5);
+        background-blend-mode: darken;
+        border: 0px solid black;
+        border-radius: 8%;
+    }
+    
+    table:hover .none{
+        height: 10%;
+    }
+</style>
+
+</html>

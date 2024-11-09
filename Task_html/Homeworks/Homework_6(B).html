@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content-one">
+            <div class="profile-card">
+              <h2>Istam</h2>
+                <img src="/Task_html/Без имени-2.jpg" alt="Profile Picture">
+                <div class="info">
+                    <div><strong>AGE:</strong><p>17</p></div>
+                    <div><strong>GENDER:</strong><p>MALE</p> </div>
+                    <div><strong>OCCUPATION:</strong><p>STUDENT</p> </div>
+                    <div><strong>TECH LITERATE:</strong><p>HIGH</p></div>
+                </div>
+            </div>
+            <div class="quote">
+                <h4>“Loving granddaughter, great friend, loves new gadgets, explores on media, impatient with apps.”</h4>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bio">
+                <h3>Bio</h3>
+                <p>She is obtaining a Bachelor of Mass media at BMM college Bandra, YouTube blogger who posts lifestyle videos as a hobby and she wants to be an actress.</p>
+            </div>
+            <div class="core-needs">
+                <h3>Core Needs</h3>
+                <ul>
+                    <li>Wants to check her account details anywhere via smartphone</li>
+
+                    <li>Would like to avoid unnecessary temptations to spend extra money</li>
+                    <li>Prefers quality and optimized user experience to use services</li>
+                </ul>
+            </div>
+            <div class="frustrations">
+                <h3>Frustrations</h3>
+                <ul>
+                    <li>Trying to find time to shop for items like food, clothes, etc.</li>
+                    <li>Slow web apps which do not satisfy her tidy schedule</li>
+                    <li>Speed and care by which the purchased items are delivered</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+    }
+    .container {
+        background-color: #faca09;
+        padding: 20px;
+        border-radius: 15px;
+        width: 860px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+    .content-one, .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .profile-card {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        width: 280px;
+        height: 400px;
+        text-align: center;
+        border: 1px solid #000000;
+        box-shadow: 10px 10px 10px;
+    }
+    .profile-card img {
+        width:180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .profile-card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .info {
+        font-size: 14px;
+        color: #555;
+        margin-top: 20px;
+    }
+    .info div {
+        margin-bottom: 5px;
+        display: flex;
+    }
+    .info div p {
+       margin-left: auto;
+       margin-right: 20px;
+    }
+    .quote {
+        font-size: 16px;
+        width: 280px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid #000000;
+        text-align: center;
+    }
+    .core-needs{
+    box-shadow: 5px 5px 10px;
+    }
+    .frustrations{
+    box-shadow: 5px 5px 10px;
+    }
+    .quote{
+    box-shadow: 5px 5px 10px;
+    }
+
+    .bio, .core-needs, .frustrations {
+        background-color: #fff;
+        border-radius: 10px;
+        min-width: 500px;
+        padding: 15px;
+        border: 1px solid #000000;
+        font-size: 13px;
+    }
+    .bio {
+        height: auto;
+        box-shadow: 5px 5px 10px;
+    }
+    h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 15px;
+    }
+    ul li {
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        position: relative;
+    }
+    li {
+      margin-top: 20px;
+    }
+    ul li::before {
+        content: "•";
+        position: absolute;
+        left: -15px;
+        color: #000000;
+        font-size: 20px;
+        line-height: 1;
+    }
+</style>
+</html>

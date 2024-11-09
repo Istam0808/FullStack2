@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="px solid white">
+        <tr>
+            <td class="td1">
+                <img src="4.jpg" width="100" height="100" >
+            </td>
+            <td class="td2">
+                <img src="4.jpg" width="100" height="100" >
+            </td>
+        </tr>
+        <tr>
+            <td class="td3">
+                <img src="4.jpg" width="100" height="100" >
+            </td>
+            <td class="td4">
+                <img src="4.jpg" width="100" height="100" >
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+<style>
+ * {
+        padding: 0;
+        margin: 0;
+        transition: 1s;
+        box-sizing: border-box;
+    }
+    table {
+        width: 100%;
+        height: 100vh;
+    }
+    td {
+        width: 50%;
+        height: 50%;
+        background-color: #333;
+    }
+    .td1 img {
+        margin-top: 25%;
+        margin-left: 80%;
+    }
+    .td2 img {
+        margin-top: 25%;
+        margin-right: 80%;
+    }
+
+    .td3 img {
+        margin-bottom: 25%;
+        margin-left: 80%;
+    }
+    .td4 img {
+        margin-bottom: 25%;
+        margin-right: 80%;
+    }
+
+    
+    table:hover td {
+        background-color: black;
+    }
+    table:hover .td1 img {
+        margin: 0 0 30% 0;
+    }
+    table:hover .td2 img {
+        margin: 0 0 30% 84%;
+    }
+    table:hover .td3 img {
+        margin: 30% 30% 0  0;
+    }
+    table:hover .td4 img {
+        margin: 30% 80% 0 84%;
+    }
+</style>
+
+</html>
