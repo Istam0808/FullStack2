@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="first">
+            <div class="right"></div>
+            <div></div>
+        </div>
+        <div class="second">
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main {
+    
+    background-color: #333;
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px;
+    }
+
+    main .first {
+        gap: 10px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+    }
+    main .second {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2px;
+    gap: 10px;
+    }
+
+    main .first div , main .second div{
+    background-color: lightgray;
+    }
+    main .first .right{
+    opacity: 0;
+    
+    }
+</style>
+
+</html>

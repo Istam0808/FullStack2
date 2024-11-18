@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="div1"></div>
+        <div class="div2"></div>
+    </main>
+</body>
+<style>
+    * {
+        transition: 0.5s;
+    }
+
+    main {
+        border: 1px solid black;
+        width: 80%;
+        height: 50vh;
+        margin: 0 auto;
+        background: lightgrey;
+    }
+
+    .div1 {
+        margin-top: 8%;
+        margin-left: 9%;
+        width: 40%;
+        height: 20vh;
+        background: darkgray;
+        border: 4px solid black;
+        float: left;
+    }
+
+    .div2 {
+        margin-top: 8%;
+        margin-right: 9%;
+        float: right;
+        border: 4px solid black;
+        width: 40%;
+        height: 20vh;
+        background: darkgray;
+    }
+
+    .div2:hover .div1 {
+        background-color: blue;
+    }
+
+    .div1:hover .div2 {
+        background-color: blue;
+    }
+
+    main:hover {
+        background-color: blue;
+    }
+
+    main:hover .div1 {
+        background-color: green;
+    }
+
+    main:hover .div2 {
+        background-color: green;
+    }
+</style>
+
+</html>

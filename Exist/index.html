@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribute Page</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+    <main id="main" class="main">
+        <!-- .header -->
+        <header class="header">
+            <h1 class="title" id="title">Dr. Norman Borlaug</h1>
+            <p class="title-description">The man who saved a billion lives</p>
+            <figure class="media" id="div-img">
+                <img class="media__img" id="image"
+                    src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute-page-main-image.jpg" alt="Dr. Normal Borlaug seen standing in Mexican wheat field 
+          with a group of biologists" />
+                <figcaption id="img-caption" class="media__caption">
+                    Dr. Norman Borlaug, third from the left, trains biologists in Mexico
+                    on how to increase wheat yields - part of his life-long war on
+                    hunger.
+                </figcaption>
+            </figure>
+        </header>
+        <!-- tribute-info -->
+        <article class="tribute-info" id="tribute-info">
+            <h3 class="headline">Here's a time line of Dr. Borlaug's life:</h3>
+            <!-- .list-of-time -->
+            <ul class="list-of-time">
+                <li><time class="time">1914</time> - Born in Cresco, Iowa.</li>
+                <li>
+                    <time class="time">1933</time> - Leaves his family's farm to attend
+                    the University of Minnesota, thanks to a Depression era program
+                    known as the "National Youth Administration".
+                </li>
+                <li>
+                    <time class="time">1935</time> - Has to stop school and save up more
+                    money. Works in the Civilian Conservation Corps, helping starving
+                    Americans. "I saw how food changed them", he said. "All of this left
+                    scars on me.".
+                </li>
+                <li>
+                    <time class="time">1937</time> - Finishes university and takes a job
+                    in the US Forestry Service.
+                </li>
+                <li>
+                    <time class="time">1938</time> - Marries wife of 69 years Margret
+                    Gibson. Gets laid off due to budget cuts. Inspired by Elvin Charles
+                    Stakman, he returns to school study under Stakman, who teaches him
+                    about breeding pest-resisten plants.
+                </li>
+                <li>
+                    <time class="time">1941</time> - Tries to enroll in the military
+                    after the Pearl Harbor attack, but is rejected. Instead, the
+                    military asked his lab to work on waterproof glue, DDT to control
+                    malaria, disinfectants, and other applied science.
+                </li>
+                <li>
+                    <time class="time">1942</time> - Receives a Ph.D. in Genetics and
+                    Plant Pathology.
+                </li>
+                <li>
+                    <time class="time">1944</time> - Rejects a 100% salary increase from
+                    Dupong, Leaves behind his pregnant wife, and flies to Mexico to head
+                    a new plant pathology program. Over the next 16 years, his team
+                    breeds 6,000 different strains of desease resisten wheat - including
+                    different varieties for each major climate on Earth.
+                </li>
+                <li>
+                    <time class="time">1945</time> - Discovers a way to grown wheat
+                    twice each season, doubling wheat yields.
+                </li>
+                <li>
+                    <time class="time">1953</time> - Crosses a short, sturdy dwarf breed
+                    of wheat with a high-yeidling American breed, creating a strain that
+                    responds well to fertilizer. It goes on to provide 95% of Mexico's
+                    wheat.
+                </li>
+                <li>
+                    <time class="time">1962</time> - Visits Delhi and brings his
+                    high-yielding strains of wheat to the indian subcontinent in time to
+                    help mitigate mass starvation due to a rapidly expanding population.
+                </li>
+                <li>
+                    <time class="time">1970</time> - Receives the Nobel Peace Prize.
+                </li>
+                <li>
+                    <time class="time">1983</time> - Helps seven African countries
+                    dramatically increase their maize and sorghum yields.
+                </li>
+                <li>
+                    <time class="time">1984</time> - Becomes a distinguished professor
+                    at Texas A&M University.
+                </li>
+                <li>
+                    <time class="time">2005</time> - States "We will have to double the
+                    world food supply by 2050." Argues that genetically modified crops
+                    are the only way we can meet the demand, as we run out of arable
+                    land. Says that GM crops are not inherently dangerous because "we've
+                    been genetically modifying plants and animals for a long time. Long
+                    before we called it science, people were selecting the best
+                    breeds.".
+                </li>
+                <li><time class="time">2009</time> - Dies at the age of 95.</li>
+            </ul>
+            <blockquote class="quote">
+                <p>
+                    "Borlaug's life and ahievement are testimony to the far-reaching
+                    contribution that one man's towering intellect, persitence and
+                    scientific vision can make to human peace and progress."
+                </p>
+                <cite>-- Indian Prime Minister Manmohan Singh.</cite>
+            </blockquote>
+        </article>
+        <footer class="footer">
+            <p>
+                If you have time, you should read more about this incredible human
+                being on his
+                <a class="tribute-link" id="tribute-link" href="https://en.wikipedia.org/wiki/Norman_Borlaug"
+                    target="_blank">
+                    Wikipedia Entry.</a>
+            </p>
+        </footer>
+    </main>
+</body>
+<style>
+    /* base styles */
+
+    :root {
+        font-size: 16px;
+        box-sizing: border-box;
+
+        --bg-color: #f9f4ef;
+        --headline-color: #020826;
+        --text-color: #716040;
+        --time-color: #8c7851;
+        --secondary-color: #eaddcf;
+        --media-caption-color: #8c7851;
+        --tertiary-color: #f25042;
+        --border-color: #020826;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: var(--secondary-color);
+    }
+
+    .main {
+        background-color: var(--bg-color);
+    }
+
+    /* header */
+    .header {
+        padding: 1.4em 0;
+        text-align: center;
+    }
+
+    .title {
+        display: inline-block;
+        font-size: 2.4rem;
+        color: var(--headline-color);
+        border-bottom: 1px solid var(--text-color);
+        margin-bottom: 0.15em;
+    }
+
+    .title-description {
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+
+    @media (min-width: 35em) {
+        .header {
+            padding: 1.8em 0;
+        }
+
+        .title {
+            font-size: 2.8rem;
+        }
+
+        .title-description {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (min-width: 50em) {
+        .header {
+            padding: 2em 0;
+        }
+
+        .title {
+            font-size: 3rem;
+        }
+
+        .title-description {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* media */
+    .media {
+        background-color: var(--secondary-color);
+        width: 100%;
+        padding: 3em 1.5em 1.5em;
+        margin: 2em auto 1em;
+    }
+
+    .media__img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        border: 1px solid var(--border-color);
+        margin: 0 auto;
+    }
+
+    .media__caption {
+        color: #716040;
+        padding: 0 1em;
+        margin-top: 1.5em;
+    }
+
+    @media (min-width: 35em) {
+        .media {
+            padding: 4em 4em 1.5em;
+        }
+
+        .media__caption {
+            margin-top: 1em;
+        }
+    }
+
+    @media (min-width: 50em) {
+        .media {
+            padding: 5em 5em 3em;
+        }
+
+        .media__img {
+            max-width: min(100%, 900px);
+        }
+
+        .media__caption {
+            max-width: 720px;
+            margin: 1em auto 0;
+        }
+    }
+
+    /* article */
+    @media (min-width: 35em) {
+        .tribute-info {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+    }
+
+    .tribute-info>*+* {
+        margin: 3em auto;
+    }
+
+    .headline {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-align: center;
+        color: var(--headline-color);
+    }
+
+    .list-of-time {
+        padding: 0 4em;
+    }
+
+    .list-of-time>*+* {
+        margin-top: 0.6em;
+    }
+
+    .list-of-time>li {
+        font-size: 1.2rem;
+        text-align: justify;
+        color: var(--text-color);
+    }
+
+    .list-of-time .time {
+        font-weight: 700;
+    }
+
+    .quote {
+        color: var(--text-color);
+        padding-top: 1em;
+        border-top: 1px solid var(--time-color);
+        margin: 2em 4em;
+        text-align: center;
+    }
+
+    .quote>p {
+        margin-bottom: 0.5em;
+    }
+
+    /* footer */
+    .footer {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 1.5em;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: var(--tertiary-color);
+    }
+</style>
+
+</html>

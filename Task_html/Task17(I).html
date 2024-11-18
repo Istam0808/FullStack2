@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="top">
+            <div class="block1"></div>
+            <div class="block2"></div>
+            <div class="block3"></div>
+        </div>
+        <div class="bottom">
+            <div class="left"></div>
+            <div class="right">
+                <div class="top2">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="bottom2">
+                    <div class="left2">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="middle2">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="right2">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: #000;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr;
+        gap: 10px;
+        margin: 0 auto;
+        width: 600px;
+        height: 500px;
+    }
+
+    .container .top{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        background-color: black;
+    }
+
+    .top div{
+        background-color: gray;
+    }
+    .top div:nth-child(2){
+        background-color: black;
+    }
+
+    .container .bottom{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        background-color: black;
+    }
+
+    .container .bottom .left,
+    .container .bottom .right{
+        background-color: gray;
+    }
+
+    .container .bottom .right{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-template-rows: 1fr 2fr;
+        padding: 10px;
+    }
+
+
+    .container .bottom .right .top2{
+        display: grid;
+        grid-template-columns: 1fr 2.08fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        background-color: gray;
+    }
+    .container .bottom .right .top2 div{
+        background-color: #444;
+    }
+
+    .container .bottom .right .bottom2{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        background-color: gray;
+        gap: 10px;
+    }
+
+    .container .bottom .right .bottom2 .middle2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 1.3fr;
+    }
+    .container .bottom .right .bottom2 .middle2 div:last-child{
+        background-color: #444;
+    }
+    
+    .container .bottom .right .bottom2 .left2,
+    .container .bottom .right .bottom2 .right2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: #444;
+    }
+
+    .container .bottom .right .bottom2 .left2 div:last-child,
+    .container .bottom .right .bottom2 .right2 div:first-child{
+        background-color: red;
+    }
+</style>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="first">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="second">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="third">
+            <div></div>
+        </div>
+    </main>
+</body>
+<style>
+    main {
+        padding: 5px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #333;
+
+    }
+
+    main .first, main .second, main .third{
+    margin-bottom: 10px;
+    display: grid;
+    gap: 10px;
+    }
+
+    main .first{
+    grid-template-columns: 1fr 1fr;
+    }
+    main .second{
+    grid-template-columns: 1fr 4fr;
+    }
+    main .third{
+    grid-column: 1fr;
+    }
+
+    main .first div , main .second div , main .third div {
+    height: 100px;
+    background-color: lightgray;
+    }
+</style>
+
+</html>

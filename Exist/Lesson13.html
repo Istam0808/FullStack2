@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5px;
+        background-color: lightgray;
+    }
+
+    main .row {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        gap: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+   }
+
+   main .row div{
+    background-color: #333;
+    height: 100px;
+}
+
+
+
+
+</style>
+
+</html>

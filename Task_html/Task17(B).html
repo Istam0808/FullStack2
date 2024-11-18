@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="first"></div>
+
+        <div class="second">
+            
+            <div class="left">
+                <div></div>
+            </div>
+
+            <div class="right">
+
+                <div class="top">
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="bottom">
+                    <div></div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        background-color: #333;
+    }
+
+    main {
+        width: 80%;
+        background-color: #333;
+        margin: 20px auto;
+        padding: 5px;
+
+    }
+
+    main .first {
+        background: lightgray;
+        height: 150px;
+        display: grid;
+        margin-bottom: 10px;
+    }
+
+    main .second {
+        height: 150px;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    main .second .left {
+        background: lightgray;
+        height: 310px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    main .second .right .top {
+        height: 150px;
+        margin-bottom: 10px;
+        gap: 10px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    main .second .right .top div {
+        background: lightgray;
+    }
+
+    main .second .right .bottom {
+        height: 150px;
+        margin-bottom: 10px;
+        gap: 10px;
+
+        display: grid;
+        grid-template-columns: 2fr;
+
+    }
+
+    main .second .right .bottom div {
+        background: lightgray;
+    }
+</style>
+
+</html>

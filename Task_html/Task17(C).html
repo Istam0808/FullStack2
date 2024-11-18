@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+
+        <div class="colum1">
+            <div></div>
+        </div>
+
+        <div class="colum2">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="colum3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="colum4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </main>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+
+    main {
+        width: 80%;
+        background-color: #333;
+        padding: 5px;
+        margin: 20px auto;
+
+    }
+
+    main .colum1  {
+        height: 100px;
+        display: grid;
+        margin-bottom: 10px;
+    }
+
+    main .colum2 {
+        grid-template-columns: 1fr 1fr;
+        height: 100px;
+        display: grid;
+        margin-bottom: 10px;
+        gap: 10px;
+
+    }
+
+    main .colum3{
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100px;
+        display: grid;
+        margin-bottom: 10px;
+        gap: 10px;
+    
+    }
+
+    main .colum4{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 100px;
+        display: grid;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    main .colum1 div,main .colum2 div, main .colum3 div, main .colum4 div{
+        background-color: lightgray;
+    
+    } 
+</style>
+
+</html>

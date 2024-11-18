@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="tr1">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="tr2">
+            <div class="left"></div>
+            <div class="right">
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </main>
+
+
+
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        padding: 5px;
+        width: 80%;
+        margin: 20px auto;
+        background-color: #333;
+    }
+
+    main .tr1 {
+        height: 100px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 2fr 1fr 1fr;
+        margin-bottom: 5px;
+    }
+
+    main .tr1 div {
+        background-color: lightgray;
+    }
+
+    main .tr1 div:nth-child(2) {
+        opacity: 0;
+    }
+
+    main .tr2 {
+        height: auto;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    main .tr2 .left {
+        height: 200px;
+        display: grid;
+        background-color: lightgray;
+    }
+
+    main .tr2 .right {
+        background-color: lightgray;
+    
+    }
+
+</style>
+
+</html>

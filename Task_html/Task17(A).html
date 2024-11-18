@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+</body>
+<style>
+    body{
+    
+    background-color: #333;}
+    main {
+        width: 80%;
+        margin: 0 auto;
+    }
+    main .row{
+    gap: 10px;
+    margin-bottom: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    }
+
+    main .row div{
+    background-color: #333;
+    height: 100px;
+    background-color: snow;
+}
+
+
+main .row:nth-child(even) div:nth-child(odd){
+    background-color: black;
+}
+
+main .row:nth-child(odd) div:nth-child(even){
+    background-color: black;
+}
+
+
+</style>
+
+</html>
