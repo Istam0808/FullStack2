@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="div-1">
+            <div class="div-2"></div>
+        </div>
+
+        <div class="div-3">
+            <div class="div-4"></div>
+        </div>
+
+        <div class="div-5">
+            <div class="div-6"></div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        transition: 0.5s;
+
+    }
+
+
+    .main {
+        border: 1px solid red;
+        margin: 0 auto;
+        width: 50%;
+        height: 50vh;
+        background-color: gray;
+        position: relative;
+    }
+
+    .main:hover {
+        background-color: #333;
+    }
+
+    .main div {
+        position: absolute;
+    }
+
+    .div-2,
+    .div-4,
+    .div-6 {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .div-1,
+    .div-3 {
+        width: 40px;
+        height: 50%;
+        top: 25%;
+        background-color: rgb(0, 0, 255, 0.8);
+    }
+
+    .div-2 {
+        background-color: red;
+    }
+
+    .div-3 {
+        background-color: black;
+        right: 0;
+    }
+
+    .div-4 {
+        background-color: greenyellow;
+        bottom: 0;
+    }
+
+    .div-5 {
+        width: 50%;
+        left: 25%;
+        height: 40px;
+        background-color: green;
+        bottom: 0;
+    }
+
+    .div-6 {
+        background-color: magenta;
+        left: 40%;
+    }
+
+
+
+    .main:hover .div-1 {
+        width: 60px;
+        border-radius: 30px;
+
+    }
+
+    .main:hover .div-3 {
+        width: 60px;
+        border-radius: 30px;
+    }
+
+    .main:hover .div-5 {
+        height: 60px;
+        border-radius: 30px;
+    }
+
+    .main:hover .div-2{
+        width: 60px;
+        height: 60px;
+        background-color: yellow;
+    }
+
+    .main:hover .div-4{
+        width: 60px;
+        height: 60px;
+        background-color: red;
+    }
+
+    .main:hover .div-6{
+        width: 60px;
+        height: 60px;
+        background-color: orange;
+    }
+</style>
+
+</html>
