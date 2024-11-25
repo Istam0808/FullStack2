@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <a href="#" id="logo">LOGO</a>
+        </div>
+        <div class="middle">
+            <a href="#">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Category</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="right">
+            <a href="#">😊</a>
+            <a href="#">🔍</a>
+            <a href="#">🛒</a>
+        </div>
+    </header>
+
+    <section class="carousel-wrapper">
+        <div class="content">
+            <div class="left">
+                <h1>Exclusive Deals of Furniture <span>Collection</span></h1>
+                <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam omnis officia
+                    corrupti deserunt tenetur quasi impedit ad laudantium consectetur? Commodi quaerat eaque
+                    consequuntur atque repudiandae possimus vel, modi molestiae reprehenderit.</p>
+
+                <div class="btn-group">
+                    <button class="outlined">Buy Now</button>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="right">
+                <img src="toppng.com-kratos-god-of-war-4-render-702x631.png" alt="" width="60%" height="400px">
+            </div>
+        </div>
+        <div class="dots">
+            <div></div>
+            <div></div>
+            <div class="selected"></div>
+        </div>
+
+    </section>
+
+    <main>
+        <div class="content">
+            <div class="left">
+                <h1 class="main-text">Why <span>You Get</span> With Our Furniture</h1>
+                <p class="main-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam debitis doloribus
+                    eum. Rem ?</p>
+            </div>
+            <div class="right">
+                <img src="https://m.economictimes.com/thumb/msid-115190126,width-1200,height-900,resizemode-4,imgsize-90618/god-of-war-tv-series-all-you-may-want-to-know.jpg"
+                    alt="" width="250" height="250">
+                <img src="https://m.economictimes.com/thumb/msid-115190126,width-1200,height-900,resizemode-4,imgsize-90618/god-of-war-tv-series-all-you-may-want-to-know.jpg"
+                    alt="" width="250" height="250">
+                <img src="https://m.economictimes.com/thumb/msid-115190126,width-1200,height-900,resizemode-4,imgsize-90618/god-of-war-tv-series-all-you-may-want-to-know.jpg"
+                    alt="" width="250" height="250">
+            </div>
+        </div>
+
+        <div class="NewArrivals">
+            <div class="h1">
+                <h1>New Arrivals</h1>
+            </div>
+            <div class="content">
+                <div class="first-img">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/221104123817-god-of-war-ragnarok-review-cnnu-1.jpg?c=16x9" alt="" width="430" height="400">
+                    <div class="text">
+                        <button>Buy Now</button>
+                        <p>$299.00</p>
+                    </div>
+                </div>
+                <div class="second-img">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/221104123817-god-of-war-ragnarok-review-cnnu-1.jpg?c=16x9" alt="" width="430" height="400">
+                    <div class="text">
+                        <button>Buy Now</button>
+                        <p>$299.00</p>
+                    </div>
+                </div>
+                <div class="third-img">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/221104123817-god-of-war-ragnarok-review-cnnu-1.jpg?c=16x9" alt="" width="430" height="400">
+                    <div class="text">
+                        <button>Buy Now</button>
+                        <p>$299.00</p>
+                    </div>
+                </div>
+                <div class="second-img"></div>
+                <div class="third-img"></div>
+            </div>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+<style>
+    main .NewArrivals .h1 {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 1.7em;
+    }
+
+    main .NewArrivals .content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+
+    }
+
+    main .NewArrivals .content .first-img .text , main .NewArrivals .content .second-img .text, main .NewArrivals .content .third-img .text{
+       display: grid;
+       grid-template-columns: 1fr 1fr; 
+    }
+
+    main .NewArrivals .content .first-img .text p , main .NewArrivals .content .second-img .text p, main .NewArrivals .content .third-img .text p{
+        font-size: 2em;
+    }
+
+    main .NewArrivals .content .first-img .text button , main .NewArrivals .content .second-img .text button, main .NewArrivals .content .third-img .text button{
+        padding: 5px 5px;
+        background-color: #B62A2B;
+    }
+</style>
+
+</html>

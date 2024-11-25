@@ -1,11 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam first</title>
+    <title>Document</title>
 </head>
+
 <body>
-    
+
+    <div class="grid-container">
+        <div class="grid-item block-1">1</div>
+        <div class="grid-item block-2">2</div>
+        <div class="grid-item block-3">3</div>
+        <div class="grid-item block-4">4</div>
+        <div class="grid-item block-5">5</div>
+        <div class="grid-item block-6">6</div>
+        <div class="grid-item block-7">7</div>
+        <div class="grid-item block-8">8</div>
+        <div class="grid-item block-9">9</div>
+    </div>
+
 </body>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .grid-container {
+        border: 5px solid red;
+        display: grid;
+        /* grid-template-columns: 200px 200px 200px; */
+        /* grid-template-columns: 25% 50% 25%; */
+        /* grid-template-columns: auto auto auto; */
+        /* grid-template-columns: 1fr 3fr 1fr; */
+        /* grid-template-columns: repeat(3, 1fr); */
+        /* grid-template-rows: repeat(3, 200px); */
+        grid-template: repeat(3, 200px) / repeat(3, 1fr);
+        /* grid-auto-flow: column; */
+        /* grid-auto-flow: row; */
+        /* grid-auto-columns: 300px; */
+        /* grid-auto-rows: 300px; */
+        /* column-gap: 50px; */
+        /* row-gap: 50px; */
+        /* gap: 20px; */
+        /* justify-items: stretch; */
+        /* justify-items: start; */
+        /* justify-items: end; */
+        /* justify-items: center; */
+        /* align-items: stretch; */
+        /* align-items: start; */
+        /* align-items: end; */
+        /* align-items: center; */
+        /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+        /* grid-template: repeat(3, 100px) /  repeat(auto-fit, minmax(200px, 1fr)); */
+        /* grid-auto-flow: row; */
+        /* grid-auto-flow: dense; */
+
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin: 10px; */
+        font-size: 25px;
+        padding: 50px;
+        border: 3px dashed green;
+    }
+
+    .block-1 {
+        /* justify-self: center; */
+        /* align-self: center; */
+        /* margin: auto; */
+        /* grid-row-start: 2;    */
+        /* grid-row-end: span 2; */
+        /* grid-row: 1 / span 2; */
+        /* grid-row: 2 / span 2; */
+        /* grid-column-start: 1; */
+        /* grid-column-end: span 2; */
+        /* grid-column: 2 / span 2; */
+        background-color: lightblue;
+        order: 1;
+    }
+
+    .block-2 {
+        /* grid-row: span 2 ; */
+        /* grid-column: span 2 ; */
+        order: 2;
+        /* grid-row: span 2; */
+        /* grid-column: span 2; */
+    }
+
+    .block-3 {
+        order: 3;
+        /* grid-row: 2 span; */
+        /* grid-column: span 2; */
+    }
+
+    .block-4 {
+        order: 4;
+        /* grid-row: 1 / span 2; */
+        /* grid-column: 3 / span 2; */
+    }
+
+    .block-5 {
+        order: 5;
+        /* margin: auto; */
+    }
+
+    .block-6 {
+        order: 6;
+    }
+
+    .block-7 {
+        order: 7;
+    }
+
+    .block-8 {
+        order: 8;
+    }
+
+    .block-9 {
+        order: 9;
+    }
+
+    .block-10 {
+        order: 10;
+    }
+</style>
+
 </html>
