@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <a href="" class="home">🏠</a>
+        <a href="" class="search">🔍</a>
+        <a href="" class="person">🤵</a>
+        <div class="line"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </main>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        background-color: lightblue;
+    }
+
+    main {
+        background-color: white;
+        padding: 20px;
+        width: 80%;
+        height: 20vh;
+        margin: 200px auto;
+        border-radius: 0 0px 80px 80px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    main a {
+        font-size: 5em;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    main .line,
+    main .line2,
+    main .line3 {
+        display: inline-block;
+        opacity: 0;
+        margin: 0 auto;
+        width: 90%;
+        height: 10px;
+        background-color: black;
+        border-radius: 50px;
+    }
+
+    main .line {
+        display: block;
+    }
+
+    main a.home:hover ~ .line {
+        opacity: 1;
+    }
+
+    main a.search:hover ~ .line2 {
+        opacity: 1;;
+    }
+
+    main a.person:hover ~ .line3 {
+        opacity: 1;
+    }
+</style>
+
+</html>

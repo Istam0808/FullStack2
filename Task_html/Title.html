@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tooltips</h1>
+
+    <main>
+        <a href="#">🏠 <span>.</span></a>
+        <a href="#">🧑 <span>Profile</span></a>
+        <a href="#">📞 <span>Contact</span></a>
+        <a href="#">🗺 <span>Location</span></a>
+        <a href="#">🔍 <span>Search</span></a>
+    </main>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        background-color: #75a1ec;
+        height: 100vh;
+    }
+
+    main {
+        width: 50%;
+        margin: 250px auto;
+        border-radius: 100px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(5, 50px);
+        justify-content: space-evenly;
+        padding: 50px;
+    }
+
+    main a {
+        text-decoration: none;
+        font-size: 2em;
+        color: black;
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+    }
+
+
+    main a span {
+        font-size: 5em;
+        position: absolute;
+        top: -123px;
+        right: -30px;
+        background-color: #75a1ec;
+        padding: 0px 30px 40px 30px;
+        display: none;
+    }
+    main a:hover span {
+        display: inline-block;
+    }
+
+</style>
+
+</html>

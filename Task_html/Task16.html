@@ -46,17 +46,14 @@
         background: darkgray;
     }
 
-    .div2:hover .div1 {
+    .div2:hover + .div1{
+        background-color: red;
+    }
+
+    .div1:hover ~ .div2 {
         background-color: blue;
     }
 
-    .div1:hover .div2 {
-        background-color: blue;
-    }
-
-    main:hover {
-        background-color: blue;
-    }
 
     main:hover .div1 {
         background-color: green;

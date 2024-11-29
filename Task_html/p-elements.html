@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+    </main>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+        box-sizing: border-box;
+    }
+
+    main {
+        width: 50%;
+        margin: 0 auto;
+        background-color: lightgray;
+        padding: 20px;
+    }
+
+    ul {
+        padding: 10px;
+    }
+
+    li {
+        list-style: armenian;
+        position: relative;
+    }
+
+    li:hover {
+        list-style: none;
+    }
+
+    li::before {
+        content: "🗺️";
+        transition: 0.5s;
+        opacity: 0;
+        position: absolute;
+        left: 25px;
+    }
+
+    li:hover::before {
+        transition: 0.5s;
+        opacity: 1;
+        content: "🏠";
+        left: -25px;
+
+    }
+</style>
+
+</html>

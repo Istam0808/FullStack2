@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="link1">
+            <a href="#">Link 1</a>
+        </div>
+        <div class="link2">
+            <a href="#">Link 2</a>
+        </div>
+        <div class="link3">
+            <a href="#">Link 3</a>
+        </div>
+    </main>
+</body>
+<style>
+    * {
+        transition: 0.5s;
+        padding: 0;
+        margin: 0;
+    }
+    ::before,::after{
+        transition: 0.5s;
+    }
+
+    main {
+        background-color: black;
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .link1 {
+    margin-bottom: 10px;
+    background-color: gray;
+    }
+    .link2 {
+    margin-bottom: 10px;
+    background-color: gray;
+    }
+    .link3 {
+
+    margin-bottom: 10px;
+    background-color: gray;
+    }
+    div a {
+    text-decoration: none;
+    color:blue ;
+    background-color: aqua;
+    margin-left: 40px;
+    }
+    div{
+    height: 18.5px;
+    position: relative;
+    }
+    
+    div::before{
+        left: -30px;
+        opacity: 0;
+        transition: 0.5s;
+        height: 100%;
+        width: 20px;
+        content: "";
+        position: absolute;
+        background: url("AOSI.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    div:hover::before {
+        left: 0px;
+        opacity: 1;
+        transition: 0.5s;
+        height: 100%;
+        width: 20px;
+        content: "";
+        position: absolute;
+        background: url("AOSI.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+
+
+    
+    div::after{
+        opacity: 0;
+        transition: 0.5s;
+        height: 100%;
+        width: 20px;
+        content: "";
+        position: absolute;
+        background: url("AOSI.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: -10px;
+    }
+    div:hover::after{
+        opacity: 1;
+        transition: 0.5s;
+        height: 100%;
+        width: 20px;
+        content: "";
+        position: absolute;
+        background: url("AOSI.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 0;
+    }
+</style>
+
+</html>

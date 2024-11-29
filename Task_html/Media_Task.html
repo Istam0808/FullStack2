@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </main>
+</body>
+<style>
+
+    *{
+        transition: 0.5s;
+    }
+
+    main {
+        width: 80%;
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        justify-content: space-between;
+
+    }
+    main div {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    @media (max-width: 500px) {
+        main {
+            background-color: indigo;
+        }
+        main div {
+            width: 100%;
+        }
+    }
+    @media (min-width: 500px) {
+        main {
+            background-color: orange;
+        }
+    }
+    @media (min-width: 750px) {
+        main {
+            background-color: green;
+        }
+    }
+</style>
+
+</html>

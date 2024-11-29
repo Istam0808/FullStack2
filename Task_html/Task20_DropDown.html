@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+</head>
+
+<body>
+    <h4>Label</h4>
+    <div class="drp-wrapper">
+        <button class="drp-btn">Dropdown</button>
+        <div class="drp-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <div class="drp-item">
+                <a href="#">Link 3</a>
+                <div class="drp-content-2">
+                    <a href="#">Sub-link 1</a>
+                    <a href="#">Sub-link 2</a>
+                    <a href="#">Sub-link 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+
+    .drp-wrapper {
+        display: inline-block;
+        position: relative;
+    }
+
+    .drp-btn {
+        padding: 10px 20px;
+        width: 130px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: green;
+        color: snow;
+        border: none;
+    }
+
+    .drp-wrapper:hover .drp-btn {
+        border-radius: 10px 10px 0 0;
+        background-color: lightgray;
+        color: black;
+        border-bottom: 2px solid green;
+    }
+
+    .drp-content {
+        box-shadow: 3px 3px 3px black;
+        width: 130px;
+        border-radius: 0 0 10px 10px;
+        padding: 5px;
+        background-color: lightgray;
+        position: absolute;
+        display: none;
+        z-index: 1;
+    }
+
+    .drp-wrapper:hover .drp-content {
+        display: block;
+    }
+
+    .drp-item {
+        position: relative;
+    }
+
+    .drp-content-2 {
+        box-shadow: 3px 3px 3px black;
+        width: 130px;
+        background-color: lightgray;
+        position: absolute;
+        top: 0;
+        left: 100%; 
+        display: none;
+        border-radius: 0 10px 10px 0;
+        z-index: 2;
+    }
+
+    .drp-item:hover .drp-content-2 {
+        display: block;
+    }
+
+    .drp-content a {
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        color: black;
+        padding: 10px;
+    }
+
+    .drp-content a:hover {
+        background-color: darkgray;
+    }
+
+    .drp-content-2 a {
+        padding: 10px;
+    }
+</style>
+</html>

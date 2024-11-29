@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="left">
+            <a href="#" id="logo">Logo</a>
+        </div>
+        <div class="right">
+            <span class="burger-icon">
+                &#9776;
+            </span>
+            <input class="burger-toggler" type="checkbox">
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+<style>
+    *{
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 8px 16px darkgray;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    nav a{
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: inline-block;
+        
+    }
+
+    nav .right{
+        display: flex;
+    }
+    nav .burger-icon,
+    nav input {
+        position: absolute;
+        display: none;
+        right: 30px;
+        top: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    nav .burger-icon {
+        z-index: 998;
+    }
+    nav input {
+        z-index: 999;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+
+
+    @media (max-width:750px) {
+        nav .right .burger-icon{
+            display: block;
+            cursor: pointer;
+        }
+
+
+        nav .right .menu{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            background-color: rgb(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            font-size: 1.5em;
+            flex-direction: column;
+        }
+        nav .right .menu a {color: snow;}
+        nav .right .menu a:hover{border-bottom: 2px solid snow;}
+        nav input{
+            display:block;
+            z-index: 999;
+        }
+
+        nav input:checked ~ .menu{
+            display: flex;
+
+            
+        }
+    }
+</style>
+</html>
