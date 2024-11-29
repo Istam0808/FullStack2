@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+    </main>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+        box-sizing: border-box;
+    }
+
+    main {
+        width: 50%;
+        margin: 0 auto;
+        background-color: lightgray;
+        padding: 20px;
+    }
+
+    ul{
+        list-style: armenian;
+        
+    }
+    li{
+    width: 200px;
+    height: 50px;
+    
+    }
+
+    li:hover {
+        position: relative;
+        padding: 5px 10px ;
+        background: url("god_war.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 10px;
+        list-style: none;
+        color: snow;
+        font-size: 1.1em;
+        width: 75px;
+    }
+    li::before{
+        content: "😊";
+        position: absolute;
+        left: -25%;
+    }
+
+
+
+</style>
+
+</html>
+
+
+<!--  a:link      {color: red;}
+      a:visited   {color: blue;}
+      a:hover     {color: orange;}
+      a:active    {color: green;}  -->

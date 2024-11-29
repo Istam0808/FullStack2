@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4>Label</h4>
+    <div class="drp-wrapper">
+        <button class="drp-btn">Dropdown</button>
+        <div class="drp-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+
+    .drp-wrapper {
+        display: inline-block;
+        position: relative;
+    }
+
+    .drp-btn {
+        padding: 10px 20px;
+        width: 130px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: green;
+        color: snow;
+        border: none;
+    }
+
+    .drp-wrapper:hover .drp-btn {
+        border-radius: 10px 10px 0 0;
+        background-color: lightgray;
+        color: black;
+        border-bottom: 2px solid green;
+    }
+
+    .drp-content {
+        width: 130px;
+        border-radius: 0 0 10px 10px;
+        padding: 5px;
+        background-color: lightgray;
+
+        position: absolute;
+        display: none;
+    }
+
+    .drp-wrapper:hover .drp-content {
+        display: block;
+    }
+
+    .drp-content a {
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        color: black;
+        padding: 10px;
+    }
+
+    .drp-content a:hover {
+        background-color: darkgray;
+    }
+</style>
+
+</html>
