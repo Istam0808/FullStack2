@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>Awesome</button>
+
+</body>
+<style>
+    body{
+        text-align: center;
+        background-color: #333;
+        color: snow;
+    }
+    *, ::before , ::after{
+        transition: 0.5s;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    button{
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        outline: none;
+        background-color: darkcyan;
+        color: snow;
+        position: relative;
+        z-index: 1;
+    }
+
+    button::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        right: 0%;
+
+        background: url("god_war.png") no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: #0000ff33;
+        background-blend-mode: darken;
+        z-index: 0;
+    }
+
+    button:hover::before{
+        left: 0%;
+        right: 0;
+        z-index: -1;
+    }
+</style>
+</html>

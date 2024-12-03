@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" pattern="[a-zA-Z0-9 ]*">
+
+</body>
+    <style>
+        body{
+            background-color: #333;
+            color: snow;
+            text-align: center;
+        }
+        input{
+            padding: 10px 20px ;
+            border: none;
+            outline: none;
+            background-color: lightgray;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        input:focus{
+            outline: 3px solid #ff00ff4d;
+        }
+
+        input:invalid{
+            background-color: red;
+            color: snow;
+            
+            animation: istam 0.1s linear 2;
+        }
+            @keyframes istam {
+                0%{transform: translateX(0);}
+                25%{transform: translateX(10px);}
+                50%{transform: translateX(-10px);}
+                75%{transform: translateX(10px);}
+                100%{transform: translateX(0);}
+            }
+
+        
+
+    </style>
+
+</html>
