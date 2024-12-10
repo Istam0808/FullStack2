@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <div>div5</div>
+        <div>div6</div>
+    </main>
+</body>
+<style>
+    *{
+        transition: 1s;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    main{
+        margin: 0 auto;
+        width: 50%;
+        background-color: black;
+        padding: 5px;
+    }
+
+    main > div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 5px;
+    }
+
+    main:hover div{
+        width: 100%;
+    }
+
+    main > div:nth-child(1){transition-timing-function: ease;}
+    main > div:nth-child(2){transition-timing-function: ease-in;}
+    main > div:nth-child(3){transition-timing-function: ease-in-out;}
+    main > div:nth-child(4){transition-timing-function: ease-out;}
+    main > div:nth-child(5){transition-timing-function: linear;}
+    main > div:nth-child(6){transition-timing-function: cubic-bezier(0,2.06,.65,.7);}
+</style>
+</html>

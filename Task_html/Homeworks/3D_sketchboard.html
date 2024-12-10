@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+</body>
+<style>
+    div {
+        width: 50%;
+        margin: 150px auto;
+        height: 30vh;
+        background: green;
+        transform: rotateX(50deg) rotateZ(50deg);
+        border: 3px solid snow ;
+        border-radius: 35px;
+        box-shadow: -1px 0 28px 0 gray,
+                    28px 28px 28px 0 #333;
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    div:hover {
+        transform: translate3d(0px, -60px, 0px) rotateX(50deg) rotateZ(50deg);
+        box-shadow: -1px 0 28px 0 gray,
+                    54px 54px 28px 0px #333;
+    }
+</style>
+</html>

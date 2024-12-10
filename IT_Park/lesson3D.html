@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <span>SARDOR_AKE</span>
+        </div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </main>
+
+</body>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+    main{
+        position: relative;
+        width: 70%;
+        margin: 100px auto;
+        background-color: black;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        border-radius: 50%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        width: 150px;
+        background: radial-gradient(circle, rgba(2,0,36,1) 28%, rgba(89,6,6,1) 35%, rgba(85,6,11,1) 45%, rgba(9,9,121,1) 64%, rgba(7,148,14,1) 82%, rgba(0,212,255,1) 100%);
+        color: snow;
+        font-size: 1.2em;
+        transition: 1s;
+    }
+
+    .box:hover {
+        box-shadow: 0 0 20px 30px purple;
+        transform: scale(2);
+    }
+
+    .box:hover span{
+
+        transform: rotate(1440deg);
+    }
+
+    .box1, .box2, .box3, .box4{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgb(2,0,36);
+        background: radial-gradient(circle, rgba(2,0,36,1) 17%, rgba(89,6,6,1) 26%, rgba(225,255,13,1) 41%, rgba(85,6,11,1) 45%, rgba(9,9,121,1) 56%, rgba(7,148,14,1) 73%, rgba(255,0,202,1) 84%, rgba(0,212,255,1) 100%);
+    }
+        
+    .box1{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .box2{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .box3{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .box4{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    
+    main:hover .box1,main:hover .box2,main:hover .box3,main:hover .box4{
+        box-shadow: 0 0 40px 20px yellow;
+    }
+
+    main:hover .box1, main:hover .box3{
+        transform: scale(3) rotateY(360deg) translateX(70px);
+    }
+    main:hover .box2, main:hover .box4{
+        transform: scale(3) rotateY(360deg) translateX(-70px);
+    }
+
+</style>
+</html>

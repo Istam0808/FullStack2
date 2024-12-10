@@ -1,0 +1,604 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+
+*::selection {
+    background-color: #fffb00;
+    color: #232323;
+}
+
+.wrapper-main {
+    position: relative;
+    width: 100%;
+    height: 1500px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+    background-color: #333;
+    margin-bottom: 150px;
+}
+
+.wrapper-main header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    padding: 3px 300px 3px 300px;
+    overflow: hidden;
+    box-shadow: 0px 10px 95px black;
+}
+
+.wrapper-main header .left {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    align-items: center;
+}
+
+.wrapper-main header .left a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+    color: snow;
+}
+
+.wrapper-main header .left a:hover {
+    transform: scale(1.08);
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #fffb00;
+}
+
+.wrapper-main header .burger-menu {
+    display: none;
+}
+.wrapper-main header .profile{
+    display: none;
+}
+
+.wrapper-main header .right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+}
+
+.wrapper-main header .right button {
+    cursor: pointer;
+    padding: 10px 25px;
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.wrapper-main header .right .reg,
+.wrapper-main header .right .log {
+    color: snow;
+    border: none;
+    background-color: transparent;
+}
+
+.wrapper-main header .right .log:hover,
+.wrapper-main header .right .reg:hover {
+    color: #333;
+    background-color: gold;
+    border: 0px solid #333;
+    border-radius: 10px;
+}
+
+.wrapper-main .wrapper-content {
+    width: 100%;
+    padding: 100px 300px 30px 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.wrapper-main .wrapper-content .left .font1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+
+}
+
+.wrapper-main .wrapper-content .left h1 {
+    color: snow;
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.wrapper-main .wrapper-content .right {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrapper-main .wrapper-content .right p {
+    color: snow;
+    font-size: 1.4em;
+    text-align: justify;
+}
+
+.wrapper-main .wrapper-content .right button {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: snow;
+    background-color: transparent;
+    border: 2px solid gold;
+    border-radius: 10px;
+    font-size: 1.3em;
+
+}
+
+.wrapper-main .wrapper-content .right button:hover svg {
+    color: black;
+}
+
+.wrapper-main .wrapper-content .right button:hover {
+    transform: scale(1.05);
+    font-size: 1.4em;
+    box-shadow: -250px 0px gold inset;
+    color: black;
+}
+
+.wrapper-main .wrapper-content .right button svg {
+    transition: 0.1s;
+    margin-left: 10px;
+}
+
+
+.wrapper-main .pic {
+    width: 100%;
+    padding: 20px 300px 20px 300px;
+    position: relative;
+}
+
+.wrapper-main .pic .img {
+    width: 100%;
+    height: 760px;
+    filter: blur(0.5px);
+    background: url(pics/man-work.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 30px;
+}
+
+.wrapper-main .pic .eticet {
+    position: absolute;
+    bottom: 150px;
+    right: 370px;
+    box-shadow: 0 3px 15px black;
+
+
+    border-radius: 20px;
+    width: 340px;
+    height: 320px;
+    background-color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&family=Righteous&display=swap');
+
+.wrapper-main .pic .eticet h1 {
+    display: inline-block;
+    font-size: 60px;
+    padding-left: 85px;
+    margin: 30px auto;
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 400;
+}
+
+.wrapper-main .pic .eticet .line1 {
+    width: 78%;
+    margin: 0px auto 10px auto;
+    height: 25px;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+.wrapper-main .pic .eticet .line2 {
+    width: 65%;
+    margin: 0px auto 30px auto;
+    height: 15px;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+.wrapper-main .pic .eticet .line3 {
+    width: 85%;
+    margin: 0px auto 15px auto;
+    height: 63px;
+    border-radius: 50px;
+    background-color: rgba(44, 175, 250, 0.747);
+}
+
+main {
+    width: 100%;
+    padding: 50px 300px 100px 300px;
+    background-color: rgba(255, 242, 225, 0.842);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px -5px 18px -5px rgba(0, 0, 0, 0.6) inset;
+    margin-bottom: 100px;
+}
+
+main .left img {
+    width: 80%;
+    border-radius: 30px;
+}
+
+main .left img::before {
+    content: "sdklf";
+    background-size: cover;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+main .right h1,
+.main-2 .left h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3em;
+    color: #232323;
+}
+
+main .right p,
+.main-2 .left p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: #333;
+    text-align: justify;
+}
+
+main .right button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: 3px solid #3366ff;
+    border-radius: 15px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    color: #202020;
+    cursor: pointer;
+}
+
+main .right button:hover {
+    box-shadow: #3366ff 320px 0px inset;
+    color: snow;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+main .right h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+main .right .card {
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+main .right .card .left img {
+    border-radius: 50%;
+}
+
+
+main .right .card .right h3 {
+    margin-top: 27px;
+    font-size: 1.5em;
+    margin-bottom: -20px;
+}
+
+.main-2 {
+    width: 100%;
+    padding: 20px 300px 20px 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 100px;
+}
+
+.main-2 .left {
+    padding: 10px 55px 10px 0;
+}
+
+.main-2 .left button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: 3px solid #3366ff;
+    border-radius: 15px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    color: #202020;
+    cursor: pointer;
+}
+
+.main-2 .left button:hover {
+    outline: 0;
+    box-shadow: #3366ff -250px 0px inset;
+    color: snow;
+}
+
+.main-2 .right {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+
+}
+
+.main-2 .right .wrapper-right {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto auto;
+    gap: 20px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+
+
+.main-2 .right .Blog {
+    margin: 0 auto;
+    justify-content: space-around;
+    height: 280px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.main-2 .right .Blog .svg {
+    margin: 10px auto;
+    padding: 20px;
+    width: 100px;
+    background-color: rgba(255, 242, 225, 0.842);
+    border-radius: 50%;
+}
+
+.main-2 .right .Blog .svg svg {
+    color: gold;
+}
+
+.main-2 .right .Blog h1 {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.main-2 .right .Blog p {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.main-3 .right .btns{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.main-3 .right .btns button{
+    margin-right: 10px;
+}
+
+.main-3 .right .btns button.play{
+    width: 270px;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border: 3px solid #fffb00;
+    border-radius: 15px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    color: #202020;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+
+
+.main-3 .right .btns button.play:hover {
+    outline: 0;
+    box-shadow: #fffb00 -310px 0px inset;    
+}
+
+
+
+
+
+
+
+
+@media(max-width:1480px){
+    .wrapper-main header {
+        padding: 3px 100px 3px 100px;
+    }
+    
+    .wrapper-main .wrapper-content{
+        padding: 100px 100px 30px 100px;
+    }
+    .wrapper-main .wrapper-content .right{
+        padding-left: 50px;
+    }
+
+    .wrapper-main .pic{
+        padding: 20px 100px;
+    }
+}
+
+@media(max-width:1250px) {
+    .wrapper-main {
+        width: auto;
+    }
+
+    .wrapper-main header a {
+        width: auto;
+        display: none;
+    }
+
+    .wrapper-main header {
+        padding: 3px 100px 3px 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .wrapper-main header .burger-menu {
+        display: block;
+        color: #fff;
+        border-left: 1px solid #fff;
+        margin-left: 10px;
+    }
+
+    .wrapper-main header .burger-menu a {
+        display: block;
+    }
+
+}
+
+@media(max-width:1135px){
+    .wrapper-main .pic .eticet{
+        display: none;
+    }
+
+    .wrapper-main .pic img{
+        width: 100%;
+    }
+}
+
+
+
+
+@media(max-width:1050px){
+    .wrapper-main header{
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+}
+
+@media(max-width:860px){
+    .wrapper-main header{
+        padding: 10px 20px;
+    }
+
+    .wrapper-main .pic .img{
+        display: none;
+    }
+
+    .wrapper-main header {
+        background-color: #202020;
+    }
+
+    .wrapper-main {
+        height: 1200px;
+        background: url(pics/man-work.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(0, 0, 0, 0.842);
+        background-blend-mode: darken;
+    }
+}
+
+@media(max-width:730px){
+    .wrapper-main header .right{
+        display: none;
+    }
+    .wrapper-main header .profile{
+        display: block;
+        
+    }
+
+    .wrapper-main header .left .burger-menu{
+        border: none;
+        border-right: 1px solid #fff;
+        margin-left: 0;
+    }
+    .wrapper-main header .content{
+        display: flex;
+        align-items: center;
+    }
+
+    .wrapper-main header .left{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .wrapper-main .wrapper-content{
+        padding-top: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    .wrapper-main .wrapper-content .left h1,.wrapper-main .wrapper-content .left i{
+        font-size: 60px;
+    }
+
+
+    .wrapper-main .wrapper-content .right{
+        padding: 0;
+    }
+
+    .wrapper-main .wrapper-content .right p{
+        margin-top: 22px;
+    }
+
+    .wrapper-main .wrapper-content .right button{
+        position: static;
+        margin: 20px auto;        
+    }
+
+    .wrapper-main .wrapper-content .left{
+        display: block;
+    }
+
+}
+
+
+@media(max-width:371px){
+    .wrapper-main header{
+        padding: 5px;
+    }
+    .wrapper-main header .left img{
+        width: 90px;
+        height: 50px;
+    }
+
+    .wrapper-main header .left .content svg{
+        width: 30px;
+        height: 30px;
+    }
+    .wrapper-main header .left .content .profile svg{
+        width: 24px;
+        height: 24px;
+    }
+
+}
