@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello World</p>
+</body>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 1.5em;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        color: red;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+        animation: param 5s infinite alternate ;
+    }
+
+    @keyframes param{
+        25%{
+            color: blue;
+            transform: scale(0.6) translateX(100px) rotatex(180deg);
+        }
+    
+        50%{
+            color: green;
+            transform: scale(1.1) translatey(200px) rotatex(40deg) rotatey(-180deg);
+        }
+        75%{
+            color: blueviolet;
+            transform: scale(0.8) translatex(-200px) rotatey(240deg);
+        }
+        100%{
+            color: aqua;
+            transform: scale(1) translatey(400px) translateX(-430px) rotatex(180deg);
+        }
+    }
+
+</style>
+</html>

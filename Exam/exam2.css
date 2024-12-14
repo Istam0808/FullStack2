@@ -1,0 +1,218 @@
+.wrapper-main {
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 70px;
+}
+
+header .logo {
+    top: 0;
+    left: 15%;
+    width: 200px;
+    height: 200px;
+    background-color: snow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px black;
+    z-index: 1;
+    position: absolute;
+}
+
+header .left-nav {
+    left: 23%;
+    top: 7%;
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    background-color: snow;
+    border-radius: 35px;
+    box-shadow: 0 0 20px black;
+}
+
+
+
+header .left-nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #333;
+}
+
+header .left-nav a.gasto {
+    color: rgb(0, 190, 0);
+}
+
+header .right-nav {
+    left: 70%;
+    top: 7%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+    background-color: snow;
+    border-radius: 30px;
+    box-shadow: 0 0 20px black;
+}
+
+header .right-nav p {
+    font-size: 1.1em;
+    color: rgb(0, 190, 0);
+    font-weight: 1000;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header .languages {
+    position: absolute;
+    left: 26.5%;
+    top: 14.2%;
+    width: 200px;
+    padding: 10px;
+    display: flex;
+}
+
+header .languages div {
+    margin-right: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+
+}
+
+header .languages .d1 {
+    background-color: rgb(0, 190, 0);
+    color: #fff;
+}
+
+main {
+    margin-bottom: 70px;
+    margin-left: 300px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main img {
+    box-shadow: 0 0 10px black;
+    border-radius: 30px;
+}
+
+main .img1 .content,
+main .img2 .content {
+    width: 135%;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .img1 .content button,
+main .img2 .content button {
+    border-radius: 40px;
+    padding: 0px 30px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 190, 0);
+    color: rgb(0, 190, 0);
+}
+
+main .img1 .content p,
+main .img2 .content p {
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+main nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50px;
+    top: 150px;
+}
+
+main nav div {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 40px;
+    font-size: 1.3em;
+}
+
+
+footer {
+    width: 100%;
+    padding: 30px 300px 10px 300px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .links a {
+    margin-top: 20px;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+footer .content {
+    text-align: end;
+}
+
+footer {
+    overflow: hidden;
+    width: 68.5%;
+    height: 30vh;
+    box-shadow: 0px -15px 84px -24px rgba(0, 0, 0, 0.47);
+}
+
+footer .content p {
+    margin-top: 20px;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+footer .content svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+footer .content p.num {
+    color: rgb(0, 190, 0);
+}
+
+body {
+    background-color: rgb(250, 242, 232);
+}

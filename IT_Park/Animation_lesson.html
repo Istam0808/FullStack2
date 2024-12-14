@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="box"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </main>
+
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(circle,
+                rgb(255, 0, 0, 0.1),
+                rgb(255, 0, 0, 0.3),
+                rgb(255, 0, 0, 0.5),
+                rgb(255, 0, 0, 0.7),
+                rgb(255, 0, 0));
+
+        animation-name: bubble;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .box2 {
+        background: radial-gradient(circle,
+                rgb(0, 255, 0, 0.1),
+                rgb(0, 255, 0, 0.3),
+                rgb(0, 255, 0, 0.5),
+                rgb(0, 255, 0, 0.7),
+                rgb(0, 255, 0));
+        animation-name: bubble2;
+    }
+
+    .box3 {
+        background: radial-gradient(circle,
+                rgb(0, 0, 255, 0.1),
+                rgb(0, 0, 255, 0.3),
+                rgb(0, 0, 255, 0.5),
+                rgb(0, 0, 255, 0.7),
+                rgb(0, 0, 255));
+        animation-name: bubble3;
+        position: absolute;
+    }
+
+    .box4 {
+        background: radial-gradient(circle,
+                rgb(0, 0, 255, 0.1),
+                rgb(0, 0, 255, 0.3),
+                rgb(0, 0, 255, 0.5),
+                rgb(0, 0, 255, 0.7),
+                rgb(0, 0, 255));
+        animation-name: bubble3;
+        position: absolute;
+    }
+
+    @keyframes bubble {
+        25% {
+            transform: scale(0.6) translate(200px, 0);
+        }
+
+        50% {
+            transform: scale(1) translate(0, 200px);
+        }
+
+        75% {
+            transform: scale(1.4) translate(200px, -200px);
+        }
+
+        100% {
+            transform: scale(1) translate(0, 0);
+        }
+    }
+
+    @keyframes bubble2 {
+        25% {
+            transform: scale(1.4) translate(-200px, 0);
+        }
+
+        50% {
+            transform: scale(1) translate(0, -200px);
+        }
+
+        75% {
+            transform: scale(0.6) translate(-200px, 200px);
+        }
+
+        100% {
+            transform: scale(1) translate(0, 0);
+        }
+    }
+
+    
+    @keyframes bubble3 {
+        25% {
+            transform: scale(1.4) translate(230px, 0);
+        }
+
+        50% {
+            transform: scale(1) translate(0, 300px);
+        }
+
+        75% {
+            transform: scale(0.3) translate(200px, -300px);
+        }
+
+        88%{
+            transform: scale(0.7) translate(-100px, 0);
+        
+        }
+
+        100% {
+            transform: scale(1) translate(0, 0);
+        }
+    }
+</style>
+
+</html>
