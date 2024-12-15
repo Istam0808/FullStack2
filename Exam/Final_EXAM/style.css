@@ -23,7 +23,7 @@ body {
     height: 1500px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
     overflow: hidden;
-    background-color: #333;
+    background-color: #1E1E1E;
     margin-bottom: 150px;
 }
 
@@ -93,7 +93,7 @@ body {
 .wrapper-main header .right .reg:hover {
     color: #333;
     background-color: gold;
-    border: 0px solid #333;
+    border: 0px solid #1E1E1E;
     border-radius: 10px;
 }
 
@@ -557,7 +557,7 @@ main .right .card .right h3 {
     }
 
     .wrapper-main header {
-        background-color: #202020;
+        background-color: #1E1E1E;
     }
 
     .wrapper-main {
@@ -851,7 +851,7 @@ progress::-moz-progress-bar {
     position: absolute;
     width: 100%;
     height: 50%;
-    background-color: #202020;
+    background-color: #1E1E1E;
     color: #fff;
     text-align: center;
 }
@@ -964,7 +964,7 @@ progress::-moz-progress-bar {
 
 .main-6 .cards .card1 .top img {
     padding: 5px;
-    background-color: #232323;
+    background-color: #1E1E1E;
     border-radius: 50%;
 }
 
@@ -993,5 +993,155 @@ progress::-moz-progress-bar {
     justify-content: center;
     border-radius: 50%;
     padding: 16px;
-    background-color: #232323;
+    background-color: #1E1E1E;
+}
+
+
+.form-container {
+    margin: 80px auto;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 60%;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.form-container .content{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 120px;
+}
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #c29c68, transparent);
+    transform: rotate(-45deg);
+}
+
+.form-container h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-container p {
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"] {
+
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid snow;
+    border-radius: 25px;
+    background-color: #333333;
+    color: #ffffff;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-container input::placeholder {
+    color: #999999;
+}
+
+.form-container button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: gold;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: rgb(218, 185, 0);
+}
+
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.btn button{
+    cursor: pointer;
+    padding: 13px 23px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+
+.main-7 .main-grid .top{
+    color: #fff;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    padding: 20px 270px 20px 320px;
+    gap: 20px;
+}
+
+.main-7 .main-grid .top .card1 {position: relative;}
+.main-7 .main-grid .top .card1 button{
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 20px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #3366ff;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+.main-7 .main-grid .top .card1 button.btn-even{
+    background-color: gold;
+    color: #1E1E1E;
+}
+
+
+.main-7 .main-grid .top .card1 img{border-start-end-radius: 20px;}
+.main-7 .main-grid .top .card1 img{border-start-start-radius: 20px;}
+
+.main-7 .main-grid .top .card1{
+    box-shadow: 0px -9px 17px -4px rgba(34, 60, 80, 0.2) inset;
+
+    border-radius: 20px;
+    color: #202020
+}
+
+.main-7 .main-grid .top .card1 p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+.main-7 .main-grid .top .card1 h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
 }
