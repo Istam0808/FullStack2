@@ -1481,23 +1481,61 @@ progress::-moz-progress-bar {
 }
 
 .main-6 .стрелка {
-    margin: 70px auto;
-    width: 9%;
-    display: flex;
-    justify-content: space-between;
+    display: none;
 }
 
-.main-6 .стрелка div {
-    cursor: pointer;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    padding: 16px;
-    background-color: #1E1E1E;
-}
 
+
+@media (max-width: 768px) {
+    .main-6 {
+        height: auto; /* Чтобы блок автоматически подстраивался под содержимое */
+        padding: 20px;
+        margin-bottom: 50px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .main-6 .title h1 {
+        font-size: 2em; /* Уменьшаем размер шрифта */
+        margin-top: 20px;
+    }
+
+    .main-6 .cards {
+        flex-direction: column; /* Ставим карточки в столбик */
+        padding: 0; /* Убираем отступы */
+        gap: 20px; /* Добавляем расстояние между карточками */
+        margin-top: 50px;
+    }
+
+    .main-6 .cards .card1 {
+        width: 100%; /* Карточка будет занимать всю ширину */
+        height: auto; /* Высота подстраивается под содержимое */
+        margin: 0 auto; /* Выравниваем карточки по центру */
+        padding: 15px;
+    }
+
+    .main-6 .cards .card1 p {
+        font-size: 0.9em; /* Уменьшаем размер шрифта для текста */
+    }
+
+    .main-6 .cards .card1 .top img {
+        width: 70px; /* Уменьшаем размер изображения */
+        height: 70px;
+    }
+
+    .main-6 .cards .card1 .top .content h2 {
+        font-size: 1em; /* Уменьшаем размер имени */
+    }
+
+    .main-6 .cards .card1 .top .content p {
+        font-size: 0.8em; /* Уменьшаем размер должности */
+    }
+
+    .main-6 .стрелка {
+        display: none;
+    }
+
+}
 
 
 
@@ -1577,6 +1615,54 @@ progress::-moz-progress-bar {
     background-color: rgb(218, 185, 0);
 }
 
+
+@media (max-width: 768px) {
+    .form-container {
+        margin: 40px 20px; /* Уменьшаем внешние отступы */
+        width: 90%; /* Увеличиваем ширину формы, чтобы она занимала больше места */
+        padding: 20px; /* Уменьшаем внутренние отступы */
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column; /* Размещаем контент в колонку */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .form-container .content {
+        padding-right: 0; /* Убираем правый отступ */
+        margin-bottom: 20px; /* Добавляем пространство между текстом и формой */
+    }
+
+    .form-container h1 {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+        line-height: 1.4; /* Делаем текст более читаемым */
+    }
+
+    .form-container p {
+        font-size: 12px; /* Уменьшаем размер текста */
+        line-height: 1.5;
+        margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"] {
+        width: 100%; /* Делаем поля ввода на всю ширину */
+        padding: 10px; /* Сохраняем комфортный размер для ввода текста */
+        font-size: 14px;
+    }
+
+    .form-container button {
+        width: 100%; /* Кнопка занимает всю ширину */
+        font-size: 14px; /* Немного уменьшаем шрифт */
+        padding: 12px; /* Делаем кнопку выше для удобного нажатия */
+    }
+
+    .form-container::before {
+        width: 100px; /* Уменьшаем размер декоративного элемента */
+        height: 100px;
+        bottom: -30px; /* Поднимаем позицию */
+        right: -30px;
+    }
+}
 
 .btn{
     display: flex;
@@ -1732,4 +1818,135 @@ footer .main-footer .icons svg{
     cursor: pointer;
     width: 25px;
     height: 25px;
+}
+/* Основной стиль для мобильных устройств */
+@media (max-width: 768px) {
+    .btn {
+        margin-bottom: 20px;
+    }
+
+    .btn button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .main-7 .main-grid .top {
+        padding: 20px 20px;
+        grid-template-columns: 1fr 1fr; /* Уменьшаем количество колонок */
+        gap: 15px;
+    }
+
+    .main-7 .main-grid .top .card1 {
+        padding: 10px;
+    }
+
+    .main-7 .main-grid .top .card1 button {
+        top: 40%; /* Сдвигаем кнопку вверх на мобильных устройствах */
+        left: 10px;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .main-7 .main-grid .top .card1 p,
+    .main-7 .main-grid .top .card1 h4 {
+        font-size: 1em;
+        margin-left: 10px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr; /* Меньше колонок для мобильных */
+        padding: 40px 20px;
+        margin-top: 50px;
+    }
+
+    footer div h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    footer div p {
+        font-size: 1em;
+    }
+
+    footer div h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    footer div a {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .marquee-container {
+        padding: 10px;
+        overflow-x: scroll; /* Возможность прокрутки по горизонтали */
+    }
+
+    .marquee-content {
+        display: inline-flex;
+        animation: marquee 20s linear infinite;
+    }
+
+    .marquee-content img {
+        width: 150px;
+        margin-right: 10px;
+    }
+
+    footer .main-footer .icons {
+        gap: 10px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .main-footer .icons svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Дополнительный стиль для устройств с маленькими экранами */
+@media (max-width: 480px) {
+    .main-7 .main-grid .top {
+        grid-template-columns: 1fr; /* Оставляем только один столбец */
+        padding: 10px;
+    }
+
+    .main-7 .main-grid .top .card1 {
+        padding: 5px;
+    }
+
+    .main-7 .main-grid .top .card1 button {
+        padding: 10px 18px;
+        font-size: 0.9em;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
+
+    footer div h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    footer div h2 {
+        font-size: 1.3em;
+        margin-bottom: 12px;
+    }
+
+    footer div a {
+        font-size: 0.9em;
+        margin-bottom: 12px;
+    }
+
+    .marquee-container {
+        padding: 5px;
+    }
+
+    .marquee-content img {
+        width: 130px;
+    }
 }
