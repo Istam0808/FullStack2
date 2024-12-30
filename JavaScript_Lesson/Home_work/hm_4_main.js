@@ -66,3 +66,56 @@
 // }else{
 //     console.log(`Текст "${string}" НЕ начинается с символа "${symbol}"`)
 // }
+
+
+
+
+
+//======INTERMEDIATE LEVEL=======
+
+// FizzBuzz
+//      Напишите логику, которая проверит число,
+// если оно кратно (если можно делить 3) 3, то выведите fizz,
+// если оно кратно (если можно делить на 5) 5, то выведите buzz,
+// если оно кратно (если можно делить на 3 и на 5) 3 и 5 то выведите fizzbuzz.
+//   В остальных случаях выводите само число. 
+
+
+// num = 30
+// if (num % 3 == 0 && num % 5 !==0){
+//     console.log("fizz")
+// }else if(num % 5 == 0 && num % 3 !== 0){
+//     console.log("buzz")
+// }else if(num % 3 == 0 && num % 5 == 0){
+//     console.log("fizzbuzz")
+// }else{
+//     console.log(num)
+// }
+
+
+// -----------------------------------------------------------------------------------------------------
+
+// POLINDROME
+//        Полиндром - это слово, которое одинаково читается справа налево и слева направо.
+//        Или число, которое одинаково читается справа налево и слева направо.
+//        Проверьте, является ли входное значение полиндромом.
+          
+//           madam   ==    madam    ==>   YES
+//           12321      ==    12321      ==>   YES
+//            -------------------------------
+//           you   ==   uoy     ==>    NOT
+//           123   ==   321     ==>    NOT 
+
+// let string = "madam"
+// string = string.toString()
+// const REVERSE_STR = string.split('').reverse().join('')
+// console.log(REVERSE_STR)
+// if (string === REVERSE_STR) {
+//     console.log(`Your text "${string}" is a PALINDROME`)
+// } else {
+//     console.log(`Your text "${string}" is NOT a PALINDROME`)
+// }
+
+
+
+
