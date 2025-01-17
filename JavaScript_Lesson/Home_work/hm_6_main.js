@@ -41,21 +41,21 @@
 
 // RU: Найти разницу между двумя массивами.
 // -------------------
-// let z = [1, 2, 3]
-// let x = [100, 2, 1, 10]
+let z = [1, 2, 3]
+let x = [100, 2, 1, 10]
 
-// let pool = []
-// z.forEach((zitem) => {
-//     if (!x.includes(zitem)) {
-//         pool.push(zitem)
-//     } 
-// })
-// x.forEach((xitem) => {
-//     if (!z.includes(xitem)) {
-//         pool.push(xitem)
-//     }
-// })
-// console.log(pool)
+let pool = []
+z.forEach((zitem) => {
+    if (!x.includes(zitem)) {
+        pool.push(zitem)
+    } 
+})
+x.forEach((xitem) => {
+    if (!z.includes(xitem)) {
+        pool.push(xitem)
+    }
+})
+console.log(pool)
 // Result  =>  ["3", "10", "100"]
 // -------------------
 // let z2 = [1, 2, 15]

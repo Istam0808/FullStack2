@@ -2,10 +2,13 @@ let str = "Hello world"
 
 let vowels = ""
 let constanst = ""
+let pool = ""
 
 str.toLowerCase().split("").forEach((letter) => {
-    if (("a,e,i,o,u").includes(letter)){
+    if ("aeiou".includes(letter)){
         vowels += letter
+    }else if (" ".includes(letter)){
+        pool += letter
     }else {
         constanst += letter
     }
