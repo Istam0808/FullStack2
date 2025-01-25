@@ -22,13 +22,13 @@
 
 
 
-let arr = ['el2', 'el', 'str', 22, 11, '15www'];
+// let arr = ['el2', 'el', 'str', 22, 11, '15www'];
 
-let result = arr
-  .filter(value => typeof value === 'number' || (typeof value === 'string' && Number(parseInt(value)))) 
-  .map(value => parseInt(value)) 
-  .reduce((current, next) => current + next, 0); 
-console.log(result);
+// let result = arr
+//   .filter(value => typeof value === 'number' || (typeof value === 'string' && Number(parseInt(value)))) 
+//   .map(value => parseInt(value)) 
+//   .reduce((current, next) => current + next, 0); 
+// console.log(result);
 
 
 
@@ -45,3 +45,5 @@ console.log(result);
 //     }).join('');
 // }
 // console.log(vowels_big(str));
+
+
