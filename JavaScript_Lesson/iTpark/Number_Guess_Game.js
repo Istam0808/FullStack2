@@ -19,7 +19,7 @@ function game() {
                 }
             }
 
-            let answer = prompt("Угадайте число от 1 до 100");
+            let answer = prompt("Угадайте число от 1 до 100" );
             answer = parseInt(answer);
 
             if (!isNaN(answer)) { 
@@ -56,7 +56,7 @@ function game() {
                 }
             } else {
                 alert("Введите корректное число!");
-            }
+            } 
         }
     }
 }
