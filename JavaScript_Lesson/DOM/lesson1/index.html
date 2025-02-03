@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <main>
+        <div class="addition">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui recusandae asperiores repellendus aliquid
+                molestias facere exercitationem dolor aliquam iste aperiam, blanditiis distinctio sequi quam ut atque
+                autem dolore laudantium quo labore? Vitae, omnis consectetur nisi accusantium laborum soluta mollitia.
+                Nobis eos qui architecto sapiente ipsa. Facilis repudiandae aspernatur blanditiis eum pariatur
+                laboriosam harum earum suscipit consequuntur, architecto molestiae. Asperiores laborum molestias
+                obcaecati amet nesciunt, necessitatibus ipsam similique voluptas earum quo quibusdam saepe eaque sit,
+                dicta vero commodi error facilis dolorum quia non! Aperiam id possimus asperiores beatae tempore,
+                cupiditate sapiente repudiandae, necessitatibus, voluptates est unde reprehenderit quas eveniet. Nisi,
+                repellendus!</p>
+        </div>
+        <div class="box">
+            <h1>Hello world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloribus, cum ipsa asperiores ea tempore
+                quas
+                earum neque. Amet corrupti perspiciatis facilis minus sint aspernatur fuga aperiam libero totam magni!
+            </p>
+            <button>
+                click
+            </button>
+        </div>
+    </main>
+    <script>
+        // toggler  =>  включатель
+        const button = document.querySelector('button')
+        const main = document.querySelector('main')
+        const addition = main.querySelector('.addition')
+
+
+
+        button.addEventListener('click', toggleAccordion)
+
+        function toggleAccordion(e) {
+            main.classList.toggle('active')
+        }
+    </script>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 1s;
+    }
+
+    main .addition {
+        margin: 20px;
+        background-color: #444;
+        color: snow;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    main.active .addition {
+        height: 300px;
+        padding: 10px;
+    }
+
+    main {
+        margin: 0 auto;
+        width: 50%;
+        background-color: lightgray;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .dark-theme {
+        background-color: #333;
+        color: snow;
+    }
+
+    .dark-theme .box {
+        background-color: black;
+    }
+</style>
+
+</html>

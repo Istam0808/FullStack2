@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Hello World</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quibusdam asperiores, iure animi magni
+            necessitatibus, suscipit quae laboriosam perspiciatis, aut illum ducimus. In corporis ducimus nesciunt non
+            quia qui perspiciatis?</p>
+        <button>
+            Dark theme
+            <span>🌑</span>
+        </button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.2s;
+    }
+
+    .box {
+        margin: 0 auto;
+        width: 50%;
+        background-color: lightgray;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+
+    .dark-theme {
+        background-color: #333;
+        color: snow;
+
+    }
+
+    .dark-theme .box{
+        background-color: black;
+    }
+
+</style>
+
+</html>

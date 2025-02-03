@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="green">
+            <button class="button-35" role="button">1</button>
+        </div>
+        <div class="yellow">
+            <button class="button-35" role="button">2</button>
+
+        </div>
+        <div class="red">
+            <button class="button-35" role="button">3</button>
+        </div>
+        <div class="orange">
+            <button class="button-35" role="button">4</button>
+        </div>
+        <div class="cyan">
+            <button class="button-35" role="button">5</button>
+        </div>
+        <div class="blue">
+            <button class="button-35" role="button">6</button>
+        </div>
+        <div class="black">
+            <button class="button-35" role="button">7</button>
+        </div>
+        <div class="purple">
+            <button class="button-35" role="button">8</button>
+        </div>
+        <div class="brown">
+            <button class="button-35" role="button">9</button>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+<style>
+    body {
+        background: url(wallpaperflare.com_wallpaper.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #1212126c;
+        background-blend-mode: darken;
+    }
+
+    *{
+        transition: 0.5s;
+    }
+    
+
+    main {
+        width: 50%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    main>div {
+        backdrop-filter: blur(10px);
+        align-items: center;
+        border: 3px solid rgba(192, 191, 191, 0.74);
+        border-radius: 15px;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    main>div:hover{
+        scale: 1.03;
+    }
+
+    .button-35 {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+        box-sizing: border-box;
+        color: #121212;
+        cursor: pointer;
+        display: inline-flex;
+        flex: 1 1 auto;
+        font-family: Inter, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 0.5;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.2rem;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow .2s, -webkit-box-shadow .2s;
+        white-space: nowrap;
+        border: 0;
+        touch-action: manipulation;
+    }
+
+    .button-35:hover {
+        transition: 0.5s;
+        box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+        scale: 1.08;
+    }
+</style>
+
+</html>
