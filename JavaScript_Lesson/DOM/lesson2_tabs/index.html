@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Frameworks Tabs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="angular">
+                <span class="icon">❤️</span> Angular
+            </button>
+            <button class="tab-btn" data-tab="react">
+                <span class="icon">⚛️</span> React
+            </button>
+            <button class="tab-btn" data-tab="vue" >
+                <span class="icon">💡</span> Vue
+            </button>
+            <button class="tab-btn" data-tab="ember">
+                <span class="icon">⭐</span> Ember
+            </button>
+        </div>
+        <div class="tab-content active" id="angular">
+            <h2>Angular</h2>
+            <p>One of the most powerful, efficient, and open-source JavaScript frameworks is Angular. Google operates this framework and is implemented to use for developing a Single Page Application (SPA). It extends the HTML into the application and interprets the attributes to perform data binding.</p>
+        </div>
+        <div class="tab-content" id="react">
+            <h2>React</h2>
+            <p>React is a popular JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer for web and mobile apps.</p>
+        </div>
+        <div class="tab-content" id="vue">
+            <h2>Vue</h2>
+            <p>Vue.js is a progressive JavaScript framework for building user interfaces. It is designed from the ground up to be incrementally adoptable.</p>
+        </div>
+        <div class="tab-content" id="ember">
+            <h2>Ember</h2>
+            <p>Ember.js is an open-source JavaScript web framework, based on the Model–view–viewmodel (MVVM) pattern. It allows developers to create scalable single-page web applications.</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+<style> 
+    body {
+    margin: 0;
+    background-color: #333;
+}
+
+.tabs-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #000;
+    width: 60%;
+    margin: 20px auto;
+    background-color: snow;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    background-color: #fff;
+}
+
+.tab-btn {
+    box-shadow: 0 0 0px 1px #000;
+    flex: 1;
+    padding: 15px;
+    border:none;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.tab-btn.active {
+    background-color: #33333385;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+
+</style>
+</html>
