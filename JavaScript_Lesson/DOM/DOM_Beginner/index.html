@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <button class="angular active">Angular</button>
+            <button class="react">React</button>
+            <button class="vue">Vue</button>
+            <button class="ember">Ember</button>
+        </div>
+        <div class="body">
+            <div class="angular-info active">
+                <h1>Angular</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+            </div>
+            <div class="react-info">
+                <h1>React</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+                <p>Lorem ipsum dolor, sit ame   t consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+            </div>
+            <div class="vue-info">
+                <h1>Vue</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+            </div>
+            <div class="ember-info">
+                <h1>Ember</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, quasi quaerat. Dolorem voluptatum accusamus et, quo magnam necessitatibus praesentium laborum harum, in accusantium minus natus aperiam dicta saepe, illum officiis.</p>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="main.js"></script>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main{
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .header {
+        display: flex;
+    }
+    .header button {
+        padding: 10px 20px ;
+        cursor: pointer;
+        background-color: black;
+        color: snow;
+        border: none;
+        outline: none;
+        display: block;
+        border-right: 1px solid snow;
+        box-shadow: 0 8px 16px gray ;
+        border-top: solid 4px transparent ;
+    }
+
+    .body > div{
+        padding: 20px;
+        display: none;
+    }
+
+    .body{
+        box-shadow: 0 8px 16px gray ;
+    }
+
+    .body > div.active{
+        display: block;
+    }
+
+
+    .header button.active{
+        border-top: solid 4px blue ;
+        background-color: #fff;
+        color: blue;
+        box-shadow: none;
+    }
+
+
+</style>
+</html>

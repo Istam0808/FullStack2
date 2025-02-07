@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <button>DropDown</button>
+    <div class="body active">
+        <div><h3>Link1</h3></div>
+        <div><h3>Link2</h3></div>
+        <div><h3>Link3</h3></div>
+    </div>
+</main>
+
+<script>
+    const button = document.querySelector('main button');
+    const dropdownContent = document.querySelector('.body');
+
+    function toggleDropdown() {
+        dropdownContent.classList.toggle('active');
+    }
+
+    button.addEventListener('click', toggleDropdown);
+</script>
+</body>
+<style>
+    main {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    main button {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+
+    .body div {
+        display: none;
+        margin-top: 1px;
+        padding: 10px;
+        background-color: lightgray;
+    }
+
+    .body.active div {
+        display: block;
+    }
+</style>
+</html>

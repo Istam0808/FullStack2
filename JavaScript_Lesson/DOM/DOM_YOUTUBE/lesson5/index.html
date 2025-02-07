@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Test Text</h1>
+    <br>
+    <button class="left">Left</button>
+    <button class="rigth">Right</button>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <span>🌟</span>
+
+    <script>
+        const leftButton = document.querySelector('.left');
+        const rightButton = document.querySelector('.rigth');
+        const text = document.querySelector('h1');
+        const star = document.querySelector('span')
+
+
+
+        star.addEventListener('click', function () {
+            star.classList.toggle('active');
+        });
+
+
+        leftButton.addEventListener('click', function () {
+            text.style.transform = 'translateX(-200px)'
+
+        });
+
+        rightButton.addEventListener('click', function () {
+            text.style.transform = 'translateX(200px)'
+        });
+
+
+    </script>
+</body>
+<style>
+    * {
+        transition: 0.5s;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    span {
+        cursor: pointer;
+        font-size: 3em;
+    }
+
+    span.active {
+        filter: grayscale(100%);
+    }
+</style>
+
+</html>

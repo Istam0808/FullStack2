@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p class="text"></p>
+        <br>
+        <input id="text" type="text" placeholder="none">
+        <br>
+        <br>
+        <input id="color" type="color" placeholder="none">
+        <input id="color-body" type="color" placeholder="none">
+        <input type="range" id="range" placeholder="none" min="16" max="100">
+    </div>
+
+
+    <script>
+        const text = document.querySelector('.text')
+        const input_text = document.querySelector('#text')
+        const input_color = document.querySelector('#color')
+        const input_color_body = document.querySelector('#color-body')
+        const body = document.querySelector('body')
+        const range = document.querySelector('#range')
+
+        input_text.addEventListener('input', (e) => {
+            text.textContent = e.target.value
+        })
+        input_color.addEventListener('input', (e) => {
+
+            text.style.color = e.target.value
+        });
+        input_color_body.addEventListener('input', (e) =>{
+
+            body.style.backgroundColor = e.target.value;  
+        })
+        range.addEventListener('input', (e) => {
+            text.style.fontSize = `${Number(e.target.value)}px`;
+        })
+
+    </script>
+</body>
+</html>
