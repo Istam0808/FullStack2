@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div><input type="button" title="btn" value="ClickMe" class="btn-input"></div>
+        <div>
+            <label for="bg-input" style="font-size: 0.5em; color: snow;">Change Bg color>>>></label>
+            <input type="color" placeholder="color" value="#b2b2b2" class="bg-color-input" name="bg-input" style="margin:10px;"></div>
+        <div>
+            <p style="font-size: 0.7em; color: snow;">Change Text color</p>
+            <input type="color" placeholder="color" value="#ffffff1" class="txt-color-input" style="margin:5px; width:35px; border-radius: 5px;">
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+<style>
+    main{
+        width: 50%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+    }
+    main div{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 30vh;
+        background-color: #333;
+    }
+</style>
+</html>

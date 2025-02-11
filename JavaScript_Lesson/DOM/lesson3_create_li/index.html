@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">
+        <input id="text-input" type="text" placeholder="Enter text: ...">
+        <input id="text-input-2" type="text" placeholder="Enter text for duplicate: ..." style="margin-top: 10px;">
+        <button>Create</button>
+
+        <ul class="items"></ul>
+    </div>
+
+
+
+    <script src="main.js">
+
+    </script>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+    .box {
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #333;
+        color: snow;
+    }
+
+    button, input {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        background-color: darkgray;
+        cursor: pointer;
+        outline: none;
+    }
+    button {
+        margin: 10px 0;
+        background-color: green;
+        color: snow;
+    }
+    input:focus {
+        background-color: snow;
+    }
+
+    li {
+        padding: 10px 20px;
+        background-color: black;
+        color: snow;
+        margin-bottom: 5px;
+        list-style-type: none;
+    }
+    ul {
+        padding: 10px;
+        background-color: #222;
+    }
+    .delete-item {
+        float: right;
+        cursor: pointer;
+    }
+
+    .color-input{
+        width: 20px;
+        height: 20px;
+        float: right;
+        padding: 0;
+    }
+
+    .input-check{
+        width: 20px;
+        height: 20px;
+        float: right;
+        padding: 0;
+        margin-left: 5px;
+    }
+</style>
+</html>
