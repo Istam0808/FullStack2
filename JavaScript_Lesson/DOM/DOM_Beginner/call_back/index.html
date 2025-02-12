@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Callback and DOM demonstration</h1>
+    <p>Time: <b id="datetime"></b></p>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // function callMe(name) {
+        //     console.log(I am calling ${name});
+        // }
+        // function sendMessage(name) {
+        //     console.log(Sending email to: ${name});
+        // }
+        // function mainFnc(callback) {
+        //     let name = "John"
+        //     console.log("------------");
+        //     console.log(callback(name));
+        //     console.log("------------");
+        // }
+        // mainFnc(sendMessage)
+        // mainFnc(callMe)
+
+        const dateTime = document.querySelector('#datetime')
+        function showTime() {
+            let date = new Date()
+            dateTime.textContent = date.toLocaleString()
+        }
+        const SECOND = 1000
+        // setTimeout(showTime,SECOND * 3)
+        setInterval(showTime, SECOND * 3)
+    </script>
+</body>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+    body{
+        background-color: #333;
+    }
+    h1{
+        color: snow;
+    }
+    b{
+        color: snow;
+    }
+    p{
+        margin-left: 45%;
+        color: snow;
+    }
+</style>
+</html>
