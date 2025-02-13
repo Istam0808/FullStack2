@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text Animation</title>
 </head>
+
 <body>
+    <h1>Callbacks and DOM animations</h1>
+
     <p>
-        time: <b id="datatime">12-february</b>
+        Time: <b id="datetime">12-february</b>
     </p>
+    <button id="left">Start left</button>
+    <button id="right">Start right</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        const datetime = document.querySelector('#datetime')
+        const stopBtn = document.querySelector("#stop")
+        const leftStartBtn = document.querySelector("#left")
+        const rightStartBtn = document.querySelector("#right")
+        let interval;
+
+        function rotateLeft() {
+            let text = datetime.textContent
+            let first = text[0]
+            datetime.textContent = text.slice(1) + first
+        }
+
+        function rotateRight() {
+            let text = datetime.textContent
+            let last = text[text.length - 1]
+            datetime.textContent = last + text.slice(0, -1)
+        }
+
+        function startAnimation(direction) {
+            stopAnimation();
+            const SECOND = 1000
+            interval = setInterval(direction === 'left' ? rotateLeft : rotateRight, SECOND / 5)
+        }
+
+        function stopAnimation() {
+            clearInterval(interval)
+        }
+
+        leftStartBtn.addEventListener('click', () => startAnimation('left'))
+        rightStartBtn.addEventListener('click', () => startAnimation('right'))
+        stopBtn.addEventListener('click', stopAnimation)
+    </script>
 </body>
+
 </html>
