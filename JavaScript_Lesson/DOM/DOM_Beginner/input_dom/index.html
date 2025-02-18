@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="par"></p>
+    <div class="box">
+        <input type="text" placeholder="none">
+        <button class="submit">Submit</button>
+        <button id="clear">Clear</button>
+    </div>
+
+    <script>
+        const par = document.getElementById('par');
+        const box = document.querySelector('.box');
+        const input = box.querySelector('input');
+        const button = box.querySelector('.submit');
+        const clear = document.getElementById('clear'); 
+
+        input.addEventListener('input', handleChange); 
+
+        function handleChange(event) {
+            par.textContent = event.target.value;
+        } 
+
+        clear.addEventListener('click', clearPar);
+
+        function clearPar() {
+            par.textContent = '';
+            input.value = ''; 
+        }
+    </script>
+
+</body>
+</html>

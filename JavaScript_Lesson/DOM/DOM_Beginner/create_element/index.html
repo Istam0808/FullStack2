@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+        .box {
+            margin: 0 auto;
+            background-color: lightgray;
+            padding: 20px;
+            width: 50%;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        li span {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
+
+        li.active{
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <ul id="list"></ul>
+    
+    <div class="box">
+        <input type="text">
+    </div>
+
+    <script>
+        const list = document.querySelector('#list')
+        const input = document.querySelector('input')
+
+        input.addEventListener('blur', createItem)
+        list.addEventListener('click', changeColor)
+
+        function createItem(e) {
+            if (input.value === "") {
+                alert('Please write something!')
+                return
+            }
+
+            const li = document.createElement('li')
+            li.textContent = input.value
+
+            const check_box = document.createElement('input')
+            check_box.type = 'checkbox'
+            check_box.addEventListener('change', toggleActive)
+
+            function toggleActive(event){
+                if(event.target.checked){
+                    li.classList.add('active')
+                } else {
+                    li.classList.remove('active')
+                }
+
+            }
+
+            
+            const span = document.createElement('span')
+            span.textContent = " ✖️"
+            span.addEventListener('click', deleteItem)
+
+            li.appendChild(span)
+            li.appendChild(check_box)
+            list.appendChild(li)
+
+            input.value = ''
+        }
+
+        function changeColor(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.style.color = "red"
+            }
+        }
+
+        function deleteItem(e) {
+            e.target.parentElement.remove()
+        }
+    </script>
+
+</body>
+
+</html>
