@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="text-area"></p>
+
+    <div class="box">
+        <input type="text" placeholder="none">
+    </div>
+
+
+
+<script>
+    const textArea = document.querySelector('#text-area');
+    const input = document.querySelector('.box input');
+
+    
+    input.addEventListener('input', TextInput)
+
+    function TextInput (e){
+        textArea.textContent = event.target.value;
+    }
+
+
+</script>    
+</body>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    .box{
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: lightgray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    input{
+        padding: 7px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }   
+
+    p{
+        margin-top: 30px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+</style>
+</html>
