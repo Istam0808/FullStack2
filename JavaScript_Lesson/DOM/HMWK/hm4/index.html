@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="picture">
+
+    </div>
+    <main>
+        <h1>Registration / Login</h1>
+
+        <a href="#">Registration</a>
+        <a href="#">Login</a>
+        <form action="">
+
+            <div class="alert">
+                <span class="close-alert">✖</span>
+                <p class="alert-message"></p>
+            </div>
+
+            <div class="form-control">
+                <label for="first-name">First Name</label><br>
+                <input id="first-name" type="text" placeholder="Enter your Name" required>
+                <p class="error"></p>
+            </div>
+
+            <div class="form-control">
+                <label for="second-name">Surname</label><br>
+                <input id="second-name" type="text" placeholder="Enter your Surname" required>
+                <p class="error"></p>
+            </div>
+
+            <div class="form-control">
+                <label for="Email">Email</label><br>
+                <input id="Email" type="email" placeholder="Email" required>
+                <p class="error"></p>
+            </div>
+
+            <div class="form-control">
+                <label for="pass">Password</label><br>
+                <input id="pass" type="password" placeholder="Password" required>
+                <p class="error"></p>
+            </div>
+
+            <div class="form-control">
+                <label for="pass-2">Password confirmation</label><br>
+                <input id="pass-2" type="password" placeholder="Password confirmation" required>
+                <p class="error"></p>
+            </div>
+
+            <div class="form-control">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstNameInp = document.querySelector("#first-name");
+            const surnameInp = document.querySelector("#second-name");
+            const emailInp = document.querySelector("#Email");
+            const passInp = document.querySelector("#pass");
+            const passConfInp = document.querySelector("#pass-2");
+            const submitBtn = document.querySelector("button[type='submit']");
+            const registrationLink = document.querySelector("a[href='#']:nth-of-type(1)");
+            const loginLink = document.querySelector("a[href='#']:nth-of-type(2)");
+            const formControls = document.querySelectorAll(".form-control");
+            const alertDiv = document.querySelector(".alert");
+            const alertMessage = document.querySelector(".alert-message");
+            const closeAlertBtn = document.querySelector(".close-alert");
+
+            closeAlertBtn.addEventListener("click", function () {
+                alertDiv.style.display = "none";
+            });
+
+            submitBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                if (!firstNameInp.value || !surnameInp.value || !emailInp.value || !passInp.value || !passConfInp.value) {
+                    return showAlert("Please, fill in all fields first!");
+                } else if (!validateEmail(emailInp.value)) {
+                    return showAlert("Invalid email format!");
+                } else if (!validatePassword(passInp.value)) {
+                    return showAlert("Password must be at least 6 characters long, contain at least one letter and one number.");
+                } else if (passInp.value !== passConfInp.value) {
+                    return showAlert("Passwords do not match");
+                } else {
+                    return showAlert("Form submitted successfully");
+                }
+            });
+
+            function showAlert(message) {
+                alertMessage.textContent = message;
+                alertDiv.style.display = "block";
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            function validatePassword(password) {
+                return password.length >= 6 && /[a-zA-Z]/.test(password) && /[0-9]/.test(password);
+            }
+
+            registrationLink.addEventListener("click", function () {
+                formControls.forEach(control => control.style.display = "block");
+            });
+
+            loginLink.addEventListener("click", function () {
+                formControls.forEach(control => {
+                    const input = control.querySelector("input");
+                    if (input && (input.id === "first-name" || input.id === "second-name" || input.id === "Email")) {
+                        control.style.display = "none";
+                    } else {
+                        control.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        background-color: #f1f1f1;
+        background: url("Top_bg_anime.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    main {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: darken;
+        background-color: #000000be;
+        width: 100%;
+        text-align: center;
+    }
+
+    main h1 {
+        text-align: center;
+        color: snow;
+        font-family: sans-serif;
+        font-weight: 20;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        font-size: 2.7em;
+    }
+
+    a {
+        margin-top: 10px;
+        text-decoration: none;
+        color: snow;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: lighter;
+        margin-right: 40px;
+        transition: 0.5s;
+    }
+
+    form {
+        width: 80%;
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #ddd;
+        text-align: left;
+        margin-bottom: -4px;
+        margin-left: 15px;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #444;
+        color: white;
+        font-size: 14px;
+    }
+
+    input::placeholder {
+        color: #bbb;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        height: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button[type="submit"] {
+        background-color: #ffcc00;
+        color: black;
+        clip-path: polygon(50% 0%, 90% 0, 100% 50%, 90% 100%, 70% 100%, 30% 100%, 10% 100%, 0 50%, 10% 0);
+    }
+
+    button[type="submit"]:hover {
+        background-color: #e6b800;
+    }
+
+    button[type="reset"] {
+        background-color: #666;
+        color: white;
+        margin-top: 10px;
+    }
+
+
+    .alert {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 50px;
+        font-size: 2em;
+        font-family: Arial,sans-serif;
+        background-color: #333;
+        color: rgb(225, 0, 255);
+        text-align: center;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .close-alert {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        color: black;
+    }
+</style>
+
+</html>
