@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main class="game">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+
+    <button id="reset-game">Reset</button>
+
+    <script>
+        const cells = document.querySelectorAll('main > div')
+        const resetBtn = document.querySelector('#reset-game')
+
+
+        for (let cell of cells) {
+            cell.addEventListener('click', gameLogic)
+        }
+
+        resetBtn.addEventListener('click', clearGame)
+
+        function clearGame(event) {
+            for (let cell of cells) {
+                cell.textContent = ""
+            }
+        }
+
+        // let counter = 0
+        function gameLogic(event) {
+            const cell = event.target
+
+            if (cell.textContent.length == 0) {
+                cell.textContent = "❌"
+
+                let EmptyCells = getEmptyCells()
+                if (EmptyCells.length > 0) {
+                    runAI()
+                }
+            }
+
+
+
+            //============================================
+            // if (cell.textContent.length == 0) {
+            //     if (counter % 2 == 0) {
+            //         cell.textContent = '❌'
+            //     } else {
+            //         cell.textContent = '⭕'
+            //     }
+            //     counter++
+            // } else {
+            //     cell.textContent = ""
+            // }
+            //============================================
+        }
+
+        function runAI() {
+            const eC = getEmptyCells()
+            const randomIndex = parseInt(Math.random() * eC.length)
+            const cell = eC[randomIndex]
+
+            setTimeout(() => {
+                cell.textContent = "⭕"
+            }, 500)
+
+        }
+
+        function getEmptyCells() {
+            return Array.from(cells).filter(cell => cell.textContent = "")
+        }
+
+    </script>
+
+</body>
+<style>
+    * {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: green;
+        color: snow;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    main {
+        width: 50%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+
+    main div {
+        background-color: #333;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        cursor: pointer;
+        font-size: 2em;
+    }
+</style>
+
+
+
+</html>

@@ -42,15 +42,15 @@
     </div>
 
     <script>
-        const thumbnails = document.querySelectorAll('.thumbnail'); // Находим все миниатюры слева
-        const mainImage = document.querySelector('.main-image'); // Находим главную картинку справа
+        const thumbnails = document.querySelectorAll('.thumbnail'); 
+        const mainImage = document.querySelector('.main-image');
 
 
 
 
         thumbnails.forEach(thumbnail => {
             thumbnail.onclick = function () {
-                mainImage.src = this.src; // Меняем src главной картинки на src кликнутой миниатюры
+                mainImage.src = this.src; 
             };
         });
         
