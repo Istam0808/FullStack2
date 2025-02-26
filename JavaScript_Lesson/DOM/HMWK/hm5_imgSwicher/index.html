@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .main-image {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="thumbnails">
+            <img src="/IT_Park/4.jpg" class="thumbnail" alt="Thumbnail 1">
+            <img src="/IT_Park/3.jpg" class="thumbnail" alt="Thumbnail 2">
+            <img src="/IT_Park/god_war.png" class="thumbnail" alt="Thumbnail 3">
+        </div>
+        <img src="image1.jpg" class="main-image" alt="Main Image">
+    </div>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail'); // Находим все миниатюры слева
+        const mainImage = document.querySelector('.main-image'); // Находим главную картинку справа
+
+
+
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.onclick = function () {
+                mainImage.src = this.src; // Меняем src главной картинки на src кликнутой миниатюры
+            };
+        });
+        
+    </script>
+</body>
+
+</html>
