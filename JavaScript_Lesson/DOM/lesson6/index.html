@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <main class="game">
         <div></div>
         <div></div>
@@ -20,80 +20,115 @@
         <div></div>
         <div></div>
     </main>
-
     <button id="reset-game">Reset</button>
 
-    <script>
-        const cells = document.querySelectorAll('main > div')
-        const resetBtn = document.querySelector('#reset-game')
+    <div class="alert-finish" style="display: none;">
+        <div class="alert-content">
+            <span id="close-modal">&times;</span>
+            <h1 id="winner-emoji">🥳</h1>
+            <h1 id="winner-text"></h1>
+            <p>Чтобы начать игру заново, нажмите кнопку "RESET"</p>
+            <button id="reset-game-alert">Reset</button>
 
+        </div>
+    </div>
+
+    <script>
+        const cells = document.querySelectorAll('main > div');
+        const resetBtn = document.querySelector('#reset-game');
+        const alertBox = document.querySelector('.alert-finish');
+        const winnerText = document.querySelector('#winner-text');
+        const closeModal = document.querySelector('#close-modal');
+        const resetByAlert = document.querySelector('#reset-game-alert');
+        let canPlay = true;
 
         for (let cell of cells) {
-            cell.addEventListener('click', gameLogic)
+            cell.addEventListener('click', gameLogic);
         }
+        resetBtn.addEventListener('click', clearGame);
+        closeModal.addEventListener('click', () => alertBox.style.display = 'none');
+        resetByAlert.addEventListener('click', clearGame);
 
-        resetBtn.addEventListener('click', clearGame)
-
-        function clearGame(event) {
-            for (let cell of cells) {
-                cell.textContent = ""
-            }
-        }
-
-        // let counter = 0
         function gameLogic(event) {
-            const cell = event.target
+            const cell = event.target;
+            if (canPlay && cell.textContent.length === 0) {
+                cell.textContent = "❌";
+                cell.style.backgroundColor = "green";
 
-            if (cell.textContent.length == 0) {
-                cell.textContent = "❌"
+                if (checkWinner("❌")) {
+                    showWinner("Вы выиграли Поздравляю!", "🥳");
+                    return;
+                }
 
-                let EmptyCells = getEmptyCells()
-                if (EmptyCells.length > 0) {
-                    runAI()
+                let emptyCells = getEmptyCells();
+                if (emptyCells.length > 0) {
+                    runAI();
+                } else {
+                    showWinner("Ничья, попробуй еще раз!", "😐");
                 }
             }
-
-
-
-            //============================================
-            // if (cell.textContent.length == 0) {
-            //     if (counter % 2 == 0) {
-            //         cell.textContent = '❌'
-            //     } else {
-            //         cell.textContent = '⭕'
-            //     }
-            //     counter++
-            // } else {
-            //     cell.textContent = ""
-            // }
-            //============================================
         }
 
         function runAI() {
-            const eC = getEmptyCells()
-            const randomIndex = parseInt(Math.random() * eC.length)
-            const cell = eC[randomIndex]
+            canPlay = false;
+            const eC = getEmptyCells();
+            const randomIndex = Math.floor(Math.random() * eC.length);
+            const cell = eC[randomIndex];
 
             setTimeout(() => {
-                cell.textContent = "⭕"
-            }, 500)
+                cell.textContent = "⭕";
+                cell.style.backgroundColor = 'red';
 
+                if (checkWinner("⭕")) {
+                    showWinner("AI выиграл!", "🤖");
+                    return;
+                }
+
+                canPlay = true;
+            }, 300);
+        }
+
+        function clearGame() {
+            for (let cell of cells) {
+                cell.textContent = "";
+                cell.style.backgroundColor = '#333';
+            }
+            canPlay = true;
+            alertBox.style.display = 'none';
         }
 
         function getEmptyCells() {
-            return Array.from(cells).filter(cell => cell.textContent = "")
+            return Array.from(cells).filter(cell => cell.textContent === "");
         }
 
-    </script>
+        function checkWinner(player) {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
 
+            return winPatterns.some(pattern =>
+                pattern.every(index => cells[index].textContent === player)
+            );
+        }
+
+        function showWinner(message, emoji) {
+            canPlay = false;
+            winnerText.textContent = message;
+            document.querySelector('#winner-emoji').textContent = emoji;
+            alertBox.style.display = 'flex';
+        }
+    </script>
 </body>
+
 <style>
     * {
-        text-align: center;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        transition: 0.5s;
+        text-align: center;
+        transition: 0.3s;
     }
 
     button {
@@ -103,14 +138,13 @@
         background-color: green;
         color: snow;
         display: inline-block;
-        margin-top: 20px;
     }
 
     main {
         width: 50%;
-        margin: 0 auto;
+        margin: 70px auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 
@@ -122,10 +156,54 @@
         align-items: center;
         height: 150px;
         cursor: pointer;
-        font-size: 2em;
+        font-size: xx-large;
+    }
+
+    
+
+    .alert-finish {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .alert-content {
+        width: 40%;
+        padding: 50px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        background-color: #eee;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        color: gray;
+    }
+
+
+    #close-modal:hover {
+        transform: rotate(360deg) scale(1.2);
     }
 </style>
-
-
 
 </html>

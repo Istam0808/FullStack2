@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <main>
+
+    </main>
+
+    <button id="reset-game">Reset</button>
+</body>
+
+<script>
+    let array = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
+//   0 = empty|  1 = X  |  2 = O
+let y = 0
+let  main = document.querySelector("main")
+array.forEach(element => {
+    let line = document.createElement("div")
+    let x = 0;
+
+    line.forEach(lineItem => {
+        let cell = document.createElement("div")
+        cell.dataset.x = x;
+        cell.dataset.y = y;
+        line.appendChild(cell);
+
+        x++;
+    });
+
+    main.appendChild(line);
+    y++;
+});
+</script>
+</html>

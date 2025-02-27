@@ -36,3 +36,14 @@
 // for (let div of divs) {
 //     div.addEventListener('mouseover', showMsg);
 // }
+
+
+let array = [
+    [0, 0, 0],
+    [, 0, 0],
+    [0, 0, 0],
+];
+
+array[1][0] = 1
+
+console.log(array)
