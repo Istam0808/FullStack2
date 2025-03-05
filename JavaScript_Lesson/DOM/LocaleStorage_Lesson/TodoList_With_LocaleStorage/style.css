@@ -1,0 +1,65 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main {
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #333;
+        color: snow;
+    }
+
+    .todos {
+        padding: 10px;
+        background-color: #111;
+        border-radius: 5px;
+    }
+
+    input,
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        outline: none;
+        background-color: lightgray;
+        display: block;
+        margin: 2px 0;
+        width: 100%;
+        border: none;
+    }
+
+    input:focus {
+        background-color: snow;
+        color: black;
+    }
+
+    button:hover {
+        background-color: green;
+        color: snow;
+    }
+
+    li{
+        list-style-type: none;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        background-color: black;
+        padding: 10px;
+                
+    }
+
+    li .delete, li .change{
+        float: right;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+    .color-picker{
+        width: 16px;
+        height: 20px;
+        float: right;
+        padding: 0px;
+    }

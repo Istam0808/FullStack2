@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner">
+            <h2>loading...</h2>
+        </div>
+        
+        <h1>To-Do List</h1>
+        
+        <div id="todos-container">
+            <!-- To-do items will be added here -->
+        </div>
+        
+        <button onclick="getExercises()">Get Exercises</button>
+        <hr>
+    </div>
+    
+    <script>
+        const todosContainer = document.getElementById('todos-container');
+        const BASE_URL = 'https://jsonplaceholder.typicode.com';
+        const spinner = document.querySelector('.spinner');
+        
+        async function getExercises() {
+            try {
+                spinner.style.display = 'flex';
+                todosContainer.innerHTML = '';
+                
+                const URL = BASE_URL + '/todos';
+                const response = await fetch(URL);
+                const data = await response.json();
+                console.log(`Fetched ${data.length} todos`);
+                
+                data.forEach(todo => {
+                    createTodoItem(todo);
+                });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                todosContainer.innerHTML = "<p class='error'>Error loading exercises</p>";
+            } finally {
+                spinner.style.display = 'none';
+            }
+        }
+        
+        function createTodoItem(todo) {
+            const todoItem = document.createElement('div');
+            todoItem.className = 'todo-item';
+            todoItem.id = `todo-${todo.id}`;
+            
+            const todoText = document.createElement('p');
+            todoText.className = 'todo-text';
+            todoText.textContent = `${todo.id}. ${todo.title}`;
+            
+            const deleteBtn = document.createElement('span');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = '❌';
+            deleteBtn.onclick = function() {
+                ChangeToDo(todoText, deleteBtn);
+            };
+            
+            todoItem.appendChild(todoText);
+            todoItem.appendChild(deleteBtn);
+            todosContainer.appendChild(todoItem);
+        }
+        
+        function ChangeToDo(textElement, btnElement) {
+            if (textElement.style.textDecoration === 'line-through') {
+                textElement.style.textDecoration = 'none';
+                textElement.style.color = 'snow';
+                btnElement.textContent = '❌';
+            } else {
+                textElement.style.textDecoration = 'line-through';
+                textElement.style.color = 'black';
+                btnElement.textContent = '✅';
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #464646;
+            color: snow;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+        
+        #todos-container {
+            max-height: 70vh;
+            overflow-y: auto;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+        
+        .todo-text {
+            margin: 0;
+            flex-grow: 1;
+            word-break: break-word;
+            padding-right: 10px;
+        }
+        
+        .delete-btn {
+            cursor: pointer;
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: green;
+            color: snow;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #006600;
+        }
+        
+        .spinner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: snow;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+            z-index: 10;
+        }
+        
+        .error {
+            color: #ff6666;
+            text-align: center;
+        }
+        
+        hr {
+            border-color: #555;
+        }
+    </style>
+</body>
+</html>

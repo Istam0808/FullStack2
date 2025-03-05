@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="spinner">
+            <h2>loading...</h2>
+        </div>
+        <div id="joke-box">
+            <p class="left"></p>
+            <p class="right"></p>
+        </div>
+        <button onclick="getJoke()">Get Joke</button>
+    </div>
+
+    <script>
+        const jokeBox = document.querySelector("#joke-box")
+        const leftJoke = document.querySelector('.left')
+        const rightJoke = document.querySelector('.right')
+        const spinner = document.querySelector('.spinner')
+
+        const BASE_URL = 'https://official-joke-api.appspot.com'
+
+        async function getJoke() {
+            spinner.style.display = 'flex'
+            const URL = BASE_URL + '/jokes/random/'
+            const response = await fetch(URL)
+            const data = await response.json()
+            console.log(data)
+            leftJoke.textContent = data.setup
+            rightJoke.textContent = data.punchline
+            setTimeout(() => {
+                spinner.style.display = 'none'
+            }, 100);
+        }
+    </script>
+
+</body>
+<style>
+    .container {
+        width: 50%;
+        margin: 0 auto;
+        background-color: #333;
+        color: snow;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .left {
+        text-align: left;
+        color: greenyellow;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: green;
+        color: snow;
+    }
+
+    .spinner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: snow;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+</html>

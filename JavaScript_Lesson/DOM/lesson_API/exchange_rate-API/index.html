@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Converter Rate </h1>
+        <div class="spinner">
+            <h2>loading...</h2>
+        </div>
+
+        <!-- UZS to USD -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="UZS value: ...">
+                <p class="usd-value"></p>
+            </div>
+            <button onclick="getValueInUSD('UZS')">Convert UZS to USD</button>
+        </div>
+
+        <hr>
+
+        <!-- USD to UZS -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="USD value: ...">
+                <p class="uzs-value"></p>
+            </div>
+            <button onclick="getValueInUZS()">Convert USD to UZS</button>
+        </div>
+
+        <hr>
+
+        <!-- CNY to USD -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="CNY value: ...">
+                <p class="cny-to-usd-value"></p>
+            </div>
+            <button onclick="getValueInUSD('CNY')">Convert CNY to USD</button>
+        </div>
+
+        <hr>
+
+        <!-- USD to CNY -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="USD value: ...">
+                <p class="usd-to-cny-value"></p>
+            </div>
+            <button onclick="convertUSDToCNY()">Convert USD to CNY</button>
+        </div>
+
+        <hr>
+
+        <!-- CNY to UZS -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="CNY value: ...">
+                <p class="cny-to-uzs-value"></p>
+            </div>
+            <button onclick="convertCNYToUZS()">Convert CNY to UZS</button>
+        </div>
+
+        <hr>
+
+        <!-- UZS to CNY -->
+        <div class="conversion-block">
+            <div id="rate">
+                <input type="number" placeholder="UZS value: ...">
+                <p class="uzs-to-cny-value"></p>
+            </div>
+            <button onclick="convertUZSToCNY()">Convert UZS to CNY</button>
+        </div>
+    </div>
+
+    <script>
+        const spinner = document.querySelector('.spinner');
+        const BASE_URL = 'https://v6.exchangerate-api.com';
+        const API_KEY = 'YOUR_API';
+
+        async function fetchRates() {
+            spinner.style.display = 'flex';
+            const URL = BASE_URL + `/v6/${API_KEY}/latest/USD`;
+            const response = await fetch(URL);
+            const data = await response.json();
+            spinner.style.display = 'none';
+            return data.conversion_rates;
+        }
+
+        async function getValueInUSD(currency) {
+            spinner.style.display = 'flex';
+            try {
+                const rates = await fetchRates();
+                const currencyRate = rates[currency];
+
+                let input, outputElement;
+
+                if (currency === 'UZS') {
+                    input = document.querySelector('input');
+                    outputElement = document.querySelector('.usd-value');
+                    outputElement.textContent = input.value + " UZS in USD: $" + (input.value / currencyRate).toFixed(2);
+                } else if (currency === 'CNY') {
+                    input = document.querySelectorAll('input')[2];
+                    outputElement = document.querySelector('.cny-to-usd-value');
+                    outputElement.textContent = input.value + " CNY in USD: $" + (input.value / currencyRate).toFixed(2);
+                }
+
+                input.value = "";
+            } catch (error) {
+                console.error("Error fetching rates:", error);
+            } finally {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 100);
+
+
+            }
+        }
+
+        async function getValueInUZS() {
+            spinner.style.display = 'flex';
+            try {
+                const rates = await fetchRates();
+                const UZS = rates.UZS;
+
+                const uzsValueElement = document.querySelector(".uzs-value");
+                const usdInput = document.querySelectorAll('input')[1];
+
+                uzsValueElement.textContent = usdInput.value + "$ in UZS: " + (usdInput.value * UZS).toFixed(2);
+                usdInput.value = "";
+            } catch (error) {
+                console.error("Error fetching rates:", error);
+            } finally {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 100);
+
+            }
+        }
+
+        async function convertUSDToCNY() {
+            spinner.style.display = 'flex';
+            try {
+                const rates = await fetchRates();
+                const CNY = rates.CNY;
+
+                const cnyValueElement = document.querySelector(".usd-to-cny-value");
+                const usdInput = document.querySelectorAll('input')[3];
+
+                cnyValueElement.textContent = usdInput.value + "$ in CNY: " + (usdInput.value * CNY).toFixed(2);
+                usdInput.value = "";
+            } catch (error) {
+                console.error("Error fetching rates:", error);
+            } finally {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 100);
+            }
+        }
+
+        async function convertCNYToUZS() {
+            spinner.style.display = 'flex';
+            try {
+                const rates = await fetchRates();
+                const CNY = rates.CNY;
+                const UZS = rates.UZS;
+
+                // Convert CNY to USD first, then USD to UZS
+                const cnyInput = document.querySelectorAll('input')[4];
+                const cnyValueInUSD = cnyInput.value / CNY;
+                const cnyValueInUZS = cnyValueInUSD * UZS;
+
+                const outputElement = document.querySelector(".cny-to-uzs-value");
+                outputElement.textContent = cnyInput.value + " CNY in UZS: " + cnyValueInUZS.toFixed(2);
+                cnyInput.value = "";
+            } catch (error) {
+                console.error("Error fetching rates:", error);
+            } finally {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 100);
+            }
+        }
+
+        async function convertUZSToCNY() {
+            spinner.style.display = 'flex';
+            try {
+                const rates = await fetchRates();
+                const CNY = rates.CNY;
+                const UZS = rates.UZS;
+
+                // Convert UZS to USD first, then USD to CNY
+                const uzsInput = document.querySelectorAll('input')[5];
+                const uzsValueInUSD = uzsInput.value / UZS;
+                const uzsValueInCNY = uzsValueInUSD * CNY;
+                
+
+                const outputElement = document.querySelector(".uzs-to-cny-value");
+                outputElement.textContent = uzsInput.value + " UZS in CNY: " + uzsValueInCNY.toFixed(2);
+                uzsInput.value = "";
+            } catch (error) {
+                console.error("Error fetching rates:", error);
+            } finally {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 100);
+            }
+        }
+    </script>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+        background-color: #414141;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        color: snow;
+        padding: 20px;
+        background-color: #333;
+        text-align: center;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        margin-top: 0;
+        color: #4CAF50;
+    }
+
+    .conversion-block {
+        margin: 15px 0;
+    }
+
+    input {
+        padding: 10px;
+        width: 60%;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin: 5px 0;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    p {
+        margin: 10px 0;
+        font-weight: bold;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #555;
+        margin: 20px 0;
+    }
+
+    .spinner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: snow;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+</style>
+
+</html>

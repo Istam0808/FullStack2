@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getUsers()">
+        Get users
+    </button>
+
+    <main id="user-list">
+
+    </main>
+
+    <div class="spinner">
+        <div class="intersecting-circles-spinner">
+            <div class="spinnerBlock">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const baseURL = "https://reqres.in";
+
+        async function getUsers() {
+            const PATH = "/api/users?page=1";
+            const main = document.getElementById("user-list");
+            const spinner = document.querySelector(".spinner");
+
+            main.innerHTML = "";
+            spinner.style.display = "flex";
+
+            try {
+                const response = await fetch(baseURL + PATH);
+                const data = await response.json();
+                console.log(data);
+
+                setTimeout(() => {
+                    data.data.forEach(user => {
+                        const userElement = document.createElement("div");
+                        userElement.innerHTML = `
+                            <p style="font-size:1.2em">${user.first_name} ${user.last_name}</p>
+                            <img src="${user.avatar}" alt="${user.first_name}" width="100">
+                            <p>Email: ${user.email}</p>
+                            <br>
+                        `;
+                        main.appendChild(userElement);
+                    });
+                    spinner.style.display = "none"; 
+
+                }, 500);
+            } catch (error) {
+                console.error("Ошибка загрузки пользователей:", error);
+                spinner.style.display = "none"; 
+            }
+        }
+    </script>
+
+</body>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    main {
+        margin: 0 auto;
+        max-width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    div {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .spinner {
+        background-color: rgba(0, 0, 0, 0.291);
+        position: fixed;
+        top: 0;
+        left: -30px;
+        display: none;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .spinner div {
+        background-color: transparent;
+    }
+
+    .intersecting-circles-spinner,
+    .intersecting-circles-spinner * {
+        box-sizing: border-box;
+    }
+
+    .intersecting-circles-spinner {
+        height: 70px;
+        width: 70px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intersecting-circles-spinner .spinnerBlock {
+        animation: intersecting-circles-spinners-animation 1200ms linear infinite;
+        transform-origin: center;
+        display: block;
+        height: 35px;
+        width: 35px;
+    }
+
+    .intersecting-circles-spinner .circle {
+        display: block;
+        border: 2px solid #ff1d5e;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(1) {
+        left: 0;
+        top: 0;
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(2) {
+        left: calc(35px * -0.36);
+        top: calc(35px * 0.2);
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(3) {
+        left: calc(35px * -0.36);
+        top: calc(35px * -0.2);
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(4) {
+        left: 0;
+        top: calc(35px * -0.36);
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(5) {
+        left: calc(35px * 0.36);
+        top: calc(35px * -0.2);
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(6) {
+        left: calc(35px * 0.36);
+        top: calc(35px * 0.2);
+    }
+
+    .intersecting-circles-spinner .circle:nth-child(7) {
+        left: 0;
+        top: calc(35px * 0.36);
+    }
+
+    @keyframes intersecting-circles-spinners-animation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+</html>

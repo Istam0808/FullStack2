@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" name="pasw" id="password-input">
+    <input type="checkbox" id="checkbox-input">
+    <label for="checkbox-input">Show Password</label>
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const checkboxInput = document.getElementById('checkbox-input');
+
+        checkboxInput.addEventListener('change', () => {
+            if (checkboxInput.checked){
+                passwordInput.type = 'text';
+            }else {
+                passwordInput.type = 'password';
+            }
+        });
+
+    </script>
+</body>
+
+</html>
