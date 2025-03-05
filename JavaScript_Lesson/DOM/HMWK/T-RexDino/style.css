@@ -1,0 +1,110 @@
+        /* Base styles */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Dark theme styles */
+        body.dark-theme {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .game {
+            width: 600px;
+            height: 200px;
+            border-bottom: 1px solid currentColor;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 26px 26px 0px rgba(34, 60, 80, 0.2);
+            border-radius: 20px;
+            transition: border-color 0.3s;
+        }
+
+        #dino {
+            width: 40px;
+            height: 50px;
+            background-image: url(img/pngegg.png);
+            background-size: 40px 50px;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+        }
+
+        #cactus {
+            width: 35px;
+            height: 40px;
+            background-image: url(img/cactus.png);
+            background-size: 35px 40px;
+            position: absolute;
+            bottom: 0;
+            right: -30px;
+            animation: cactusMov 2s infinite linear;
+        }
+
+        @keyframes cactusMov {
+            0% { right: -30px; }
+            100% { right: 630px; }
+        }
+
+        .jump {
+            animation: jump 0.5s linear;
+        }
+
+        @keyframes jump {
+            0% { bottom: 0; }
+            50% { bottom: 100px; }
+            100% { bottom: 0; }
+        }
+
+        #score {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Theme toggle styles */
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .theme-toggle label {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .theme-toggle input {
+            cursor: pointer;
+        }
+
+        .dark-theme #dino {
+            filter: invert(1);
+        }
+
+        .dark-theme #cactus {
+            filter: invert(1);
+        }
+
+        body {
+            background-color: #98cbff;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+        }
+        .snowflake {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.8;
+        }
