@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "John",
+      "surname": "Doe",
+      "age": 30,
+      "favourite_food": "Pilav"
+    },
+    {
+      "id": "f381",
+      "name": "Istam",
+      "surname": "Ake",
+      "favourite_food": "Sneekers",
+      "age": "10"
+    }
+  ],
+  "products": []
+}
