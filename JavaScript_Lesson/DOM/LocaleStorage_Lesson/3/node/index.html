@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+
+    <h1>NPM - Node Package Manager</h1>
+    <h1>CDN - Content Delivery Network (helps to use library as online)</h1>
+
+    <button onclick="callToaster()">Click me</button>
+
+    <script>
+        function callToaster() {
+            Toastify({
+                text: "Hello World",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                // style: {
+                //     background: "linear-gradient(to right, #00b09b, #96c93d)",
+                // },
+                className:"my-alert",
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
+
+    </script>
+</body>
+<style>
+    .my-alert{
+        background: linear-gradient(to right, red, blue);
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+</style>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPAP Supply Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal-window" id="modalWindow">
+        <div class="modal-content" id="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Login</div>
+                <div class="modal-tab" data-tab="profile">Profile</div>
+            </div>
+            
+            <!-- Login Tab -->
+            <div class="tab-content active" id="login-tab">
+                <h1>Login</h1>
+                <form id="loginForm">
+                    <div class="form-control">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" placeholder="Enter your username" required>
+                        <p class="error" id="username-error"></p>
+                    </div>
+            
+                    <div class="form-control">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Enter your password" required>
+                        <p class="error" id="password-error"></p>
+                    </div>
+                    
+                    <div class="form-control">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Profile Tab -->
+            <div class="tab-content" id="profile-tab">
+                <div class="user-profile" id="user-profile">
+                    <div class="profile-pic-container">
+                        <img src="istam_ake🤣.jpeg" alt="Profile Picture" class="profile-pic" id="profile-pic" width="150" height="150">
+                        <div class="change-pic" id="change-pic">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <h2 class="user-name" id="display-name">John Doe</h2>
+                    <p class="user-email" id="display-email">john.doe@example.com</p>
+                    <p class="user-bio" id="display-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum sed orci euismod scelerisque.</p>
+                    <button class="edit-profile-btn" id="edit-profile-btn">Edit Profile</button>
+                </div>
+                
+                <div class="edit-profile-form" id="edit-profile-form" style="display: none;">
+                    <form id="profile-form">
+                        <div class="form-control">
+                            <label for="profile-pic-input" class="file-label">
+                                <i class="fas fa-camera"></i> Change Profile Picture
+                            </label>
+                            <input type="file" id="profile-pic-input" class="file-input" accept="image/*">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="edit-name">Full Name</label>
+                            <input id="edit-name" type="text" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="edit-email">Email</label>
+                            <input id="edit-email" type="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="edit-bio">Bio</label>
+                            <textarea id="edit-bio" rows="4" placeholder="Tell us about yourself"></textarea>
+                        </div>
+                        
+                        <div class="form-control">
+                            <button type="submit">Save Changes</button>
+                        </div>
+                        
+                        <div class="form-control">
+                            <button type="button" id="cancel-edit">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="top">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, doloribus!</p>
+    </div>
+    
+    <header>
+        <div class="logo">
+            <img src="2exam_logo.png" alt="CPAP Supply Logo" width="100" height="100">
+        </div>
+        <div class="input_search">
+            <input type="search" placeholder="Search products...">
+            <div class="search-dropdown">
+                <div class="dropdown-item">CPAP Machines</div>
+                <div class="dropdown-item">Sleep Apnea Masks</div>
+                <div class="dropdown-item">CPAP Accessories</div>
+                <div class="dropdown-item">Filters</div>
+            </div>
+        </div>
+        <div class="phone-info">
+            <p>Customer Support</p>
+            <h1>(123) 456-7898</h1>
+        </div>
+        <div class="links">
+            <a href="#"><i class="fas fa-blog"></i> Blog</a>
+            <a href="#" id="accountLink"><i class="fas fa-user"></i> Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+        <div class="button-night-day">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+    
+    <main>
+        <a href="#">MACHINES</a>
+        <a href="#">MASKS</a>
+        <a href="#">CPAP SUPPLIES</a>
+        <a href="#">HUMIDIFIERS</a>
+        <a href="#">MORE</a>
+    </main>
+    
+    <footer>
+        <div class="left">
+            <p><span>Home</span> / CPAP Machines</p>
+            <h1>CPAP Machines for Sleep Apnea</h1>
+            <p>Our selection of CPAP machines includes the most advanced and reliable devices on the market today. Find the perfect CPAP machine to help you maintain your therapy and get a good night's sleep. From portable travel CPAPs to full-featured home units, we have options for every lifestyle and budget.</p>
+        </div>
+        <div class="right">
+            <img src="ali2.jpeg" alt="CPAP Machine" width="400" height="300">
+        </div>
+    </footer>
+
+    <script src="main.js">
+    
+    </script>
+</body>
+</html>

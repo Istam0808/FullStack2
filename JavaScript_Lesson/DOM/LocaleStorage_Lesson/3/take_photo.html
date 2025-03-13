@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Camera Snapshot</title>
+    <style>
+        main {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #video,
+        #canvas {
+            border: 1px solid #ccc;
+        }
+
+        #canvas {
+            display: none;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <video id="video" width="1980" height="1080" autoplay></video>
+        <canvas id="canvas" width="1980" height="1080"></canvas>
+        <div id="status">Waiting for camera access...</div>
+    </main>
+    <script>
+        const videoTag = document.querySelector('#video');
+        const canvasTag = document.querySelector('#canvas');
+        const context = canvasTag.getContext('2d');
+        const statusEl = document.querySelector('#status');
+
+        // Request camera access
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(handleCamera)
+                .catch(error => {
+                    statusEl.textContent = 'Error accessing camera: ' + error.message;
+                    console.error('Camera error:', error);
+                });
+        } else {
+            statusEl.textContent = 'Your browser does not support camera access';
+        }
+
+        function handleCamera(stream) {
+            statusEl.textContent = 'Camera connected. Taking photo in 1 seconds...';
+            videoTag.srcObject = stream;
+            videoTag.play();
+
+            // Wait for video to start playing before taking the snapshot
+            videoTag.onloadeddata = function () {
+                // Take photo automatically after a short delay to allow camera to adjust
+                setTimeout(() => {
+                    takeSnapshot();
+                    statusEl.textContent = 'Photo taken and saved successfully!';
+                }, 500);
+            };
+        }
+
+        function takeSnapshot() {
+            // Draw the video frame to the canvas
+            context.drawImage(videoTag, 0, 0, canvasTag.width, canvasTag.height);
+
+            // Convert canvas to image file and download
+            canvasTag.toBlob(function (blob) {
+                const link = document.createElement('a');
+                link.download = 'camera-snapshot-' + new Date().toISOString() + '.png';
+                link.href = URL.createObjectURL(blob);
+                link.click();
+                URL.revokeObjectURL(link.href);
+            }, 'image/png');
+        }
+    </script>
+</body>
+
+</html>

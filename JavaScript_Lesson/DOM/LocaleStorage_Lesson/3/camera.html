@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+        <video id="video" width="500" height="500" autoplay></video>
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </main>
+    <script>
+
+        const videoTag = document.querySelector('#video')
+ 
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video:true})
+                .then(handleCamera)
+        }
+        function handleCamera(event){
+            videoTag.srcObject = event
+            videoTag.play()
+        }
+    </script>
+</body>
+</html>

@@ -1,19 +1,25 @@
 {
   "user": [
     {
-      "id": "1",
-      "name": "John",
-      "surname": "Doe",
-      "age": 30,
-      "favourite_food": "Pilav"
+      "name": "Istam",
+      "surname": "qwe",
+      "favourite_food": "SDKFJHDS",
+      "age": "123",
+      "id": "989a"
     },
     {
-      "id": "f381",
-      "name": "Istam",
-      "surname": "Ake",
-      "favourite_food": "Sneekers",
-      "age": "10"
+      "id": "fbe8",
+      "name": "QWE",
+      "surname": "QWE123QWE",
+      "favourite_food": "123QWE",
+      "age": "09876543"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": "258d",
+      "brand": "gUCCI",
+      "cost": "12334"
+    }
+  ]
 }
