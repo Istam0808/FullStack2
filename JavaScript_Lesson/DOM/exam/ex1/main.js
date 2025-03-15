@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Default user data
     const defaultUser = {
         username: 'user123',
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: 'John Doe',
         email: 'john.doe@example.com',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum sed orci euismod scelerisque.',
-        profilePic: '/api/placeholder/150/150',
+        profilePic: '',
         isLoggedIn: false
     };
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         darkModeToggle.checked = true;
     }
 
-    darkModeToggle.addEventListener('change', function() {
+    darkModeToggle.addEventListener('change', function () {
         if (this.checked) {
             document.body.classList.add('dark-mode');
             localStorage.setItem('darkMode', 'enabled');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.input_search input');
 
     dropdownItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             searchInput.value = this.textContent;
         });
     });
@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Tab switching
     modalTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             const tabName = this.getAttribute('data-tab');
-            
+
             // Deactivate all tabs
             modalTabs.forEach(t => t.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
-            
+
             // Activate selected tab
             this.classList.add('active');
             document.getElementById(`${tabName}-tab`).classList.add('active');
@@ -92,12 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Open modal when account link is clicked
-    accountLink.addEventListener('click', function(event) {
+    accountLink.addEventListener('click', function (event) {
         event.preventDefault();
         modal.classList.add('active');
         modalContent.style.opacity = '0';
         modalContent.style.transform = 'translateY(-50px) scale(0.8)';
-        
+
         setTimeout(() => {
             modalContent.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
             modalContent.style.opacity = '1';
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show login tab
             modalTabs.forEach(t => t.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
-            
+
             document.querySelector('[data-tab="login"]').classList.add('active');
             document.getElementById('login-tab').classList.add('active');
         }
@@ -123,10 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function showProfileTab() {
         modalTabs.forEach(t => t.classList.remove('active'));
         tabContents.forEach(c => c.classList.remove('active'));
-        
+
         document.querySelector('[data-tab="profile"]').classList.add('active');
         document.getElementById('profile-tab').classList.add('active');
-        
+
         // Update profile info
         const currentUser = getUser();
         updateProfileDisplay(currentUser);
@@ -137,15 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
         modalContent.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
         modalContent.style.opacity = '0';
         modalContent.style.transform = 'translateY(-50px) scale(0.8)';
-        
+
         setTimeout(() => {
             modal.classList.remove('active');
         }, 300);
     }
 
     closeModal.addEventListener('click', closeModalWindow);
-    
-    window.addEventListener('click', function(event) {
+
+    window.addEventListener('click', function (event) {
         if (event.target === modal) {
             closeModalWindow();
         }
@@ -153,32 +153,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Login form submission
     const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        
+
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const usernameError = document.getElementById('username-error');
         const passwordError = document.getElementById('password-error');
-        
+
         // Reset errors
         usernameError.textContent = '';
         passwordError.textContent = '';
-        
+
         // Validate credentials
         const currentUser = getUser();
-        
+
         if (username === currentUser.username && password === currentUser.password) {
             // Login successful
             currentUser.isLoggedIn = true;
             saveUser(currentUser);
-            
+
             // Update tab visibility
             updateTabVisibility();
-            
+
             // Show profile tab
             showProfileTab();
-            
+
             // Reset form
             loginForm.reset();
         } else {
@@ -203,21 +203,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Show edit form
-    editProfileBtn.addEventListener('click', function() {
+    editProfileBtn.addEventListener('click', function () {
         const currentUser = getUser();
-        
+
         // Fill form with current data
         document.getElementById('edit-name').value = currentUser.name;
         document.getElementById('edit-email').value = currentUser.email;
         document.getElementById('edit-bio').value = currentUser.bio;
-        
+
         // Toggle view
         userProfile.style.display = 'none';
         editProfileForm.style.display = 'block';
     });
 
     // Cancel edit
-    cancelEditBtn.addEventListener('click', function() {
+    cancelEditBtn.addEventListener('click', function () {
         userProfile.style.display = 'block';
         editProfileForm.style.display = 'none';
     });
@@ -226,16 +226,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const changePicBtn = document.getElementById('change-pic');
     const profilePicInput = document.getElementById('profile-pic-input');
 
-    changePicBtn.addEventListener('click', function() {
+    changePicBtn.addEventListener('click', function () {
         profilePicInput.click();
     });
 
     // Handle profile picture selection
-    profilePicInput.addEventListener('change', function(event) {
+    profilePicInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 const currentUser = getUser();
                 currentUser.profilePic = e.target.result;
                 saveUser(currentUser);
@@ -246,17 +246,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Save profile changes
-    profileForm.addEventListener('submit', function(event) {
+    profileForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        
+
         const currentUser = getUser();
         currentUser.name = document.getElementById('edit-name').value;
         currentUser.email = document.getElementById('edit-email').value;
         currentUser.bio = document.getElementById('edit-bio').value;
-        
+
         saveUser(currentUser);
         updateProfileDisplay(currentUser);
-        
+
         // Toggle view
         userProfile.style.display = 'block';
         editProfileForm.style.display = 'none';
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
     logoutBtn.classList.add('btn', 'btn-danger');
     logoutBtn.textContent = 'Log out';
     logoutBtn.style.marginTop = '5px';
-    
+
     logoutBtn.style.padding = '10px 20px';
     logoutBtn.style.borderRadius = '5px';
     logoutBtn.style.backgroundColor = 'var(--primary-color)';
@@ -278,23 +278,23 @@ document.addEventListener('DOMContentLoaded', function() {
     logoutBtn.style.cursor = 'pointer';
     logoutBtn.style.transition = '0.3s';
 
-    
+
     // Add logout button to the profile tab
     userProfile.appendChild(logoutBtn);
-    
+
     // Logout functionality
-    logoutBtn.addEventListener('click', function() {
+    logoutBtn.addEventListener('click', function () {
         const currentUser = getUser();
         currentUser.isLoggedIn = false;
         saveUser(currentUser);
-        
+
         // Update tab visibility
         updateTabVisibility();
-        
+
         // Show login tab
         modalTabs.forEach(t => t.classList.remove('active'));
         tabContents.forEach(c => c.classList.remove('active'));
-        
+
         document.querySelector('[data-tab="login"]').classList.add('active');
         document.getElementById('login-tab').classList.add('active');
     });
