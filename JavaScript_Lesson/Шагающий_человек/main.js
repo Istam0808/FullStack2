@@ -1,3 +1,6 @@
+// Инициализация ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
 const dude = document.querySelector(".dude");
 const head = dude.querySelector(".head");
 const legs = Array.from(dude.querySelectorAll(".leg"));
@@ -7,7 +10,6 @@ const armBottoms = Array.from(dude.querySelectorAll(".arm-bottom"));
 
 const content = document.querySelector(".content");
 const arrowEl = document.querySelector(".arrow-animated");
-
 
 gsap.set(arms, {
     svgOrigin: "180 58"
@@ -24,7 +26,6 @@ gsap.set(legs, {
 gsap.set(legBottoms, {
     svgOrigin: "171 220"
 });
-
 
 const halfBodyTimeline = (leg, arm) => {
     const legBottom = leg.querySelector(".leg-bottom");
@@ -84,9 +85,6 @@ const halfBodyTimeline = (leg, arm) => {
 const backCycle = halfBodyTimeline(legs[0], arms[1]);
 const frontCycle = halfBodyTimeline(legs[1], arms[0]);
 
-
-
-
 const bodyTimeline = gsap.timeline({
     paused: true,
 })
@@ -106,9 +104,6 @@ const bodyTimeline = gsap.timeline({
         yoyo: true,
         ease: "sine.inOut"
     }, 0)
-
-
-
 
 const numberOfCycles = Math.ceil(3 * window.innerWidth / window.innerHeight)
 gsap.timeline({
@@ -146,12 +141,9 @@ gsap.timeline({
         time: .25 + numberOfCycles
     }, 0)
 
-
-
 window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
 });
-
 
 // ---------------------------------------------
 // ONLY FOR CODEPEN PREVIEW
