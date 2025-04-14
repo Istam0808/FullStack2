@@ -1,0 +1,133 @@
+@use '../../../assets/styles/globals' as * ;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    &.closing {
+        animation: fadeOut 0.3s ease forwards;
+    }
+}
+
+.modal-content {
+    @include flex();
+    background-color: #202020;
+    padding: 2.5rem ;
+    border-radius: 8px;
+    position: relative;
+    min-width: 300px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.3s ease forwards;
+
+    &.closing {
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.share-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.facebook {
+        background-color: #3b5998;
+        color: white;
+    }
+
+    &.twitter {
+        background-color: #1da1f2;
+        color: white;
+    }
+
+    &.vk {
+        background-color: #4a76a8;
+        color: white;
+    }
+
+    &.copy {
+        background-color: #ff6163;
+        color: white;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}

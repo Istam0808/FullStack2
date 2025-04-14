@@ -82,11 +82,11 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
+        width: 100%; // Change from 80% to 100%
         height: 100vh;
         background-color: #000;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center; // Add this
         padding: 5rem 2rem;
         transition: transform 0.3s ease;
         z-index: 90;
@@ -94,6 +94,19 @@
         &.mobile-open {
             transform: translateX(-100%);
         }
+    }
+}
+
+.burger-menu {
+    display: none;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 100;
+    padding: 1rem; // Add this for better touch target
+
+    @media (max-width: 768px) {
+        display: block;
     }
 }
 
@@ -168,6 +181,9 @@
     transition: color 0.3s;
     font-weight: 500;
     letter-spacing: 0.05em;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:hover {
         color: #666;
@@ -185,6 +201,10 @@
 .nav-dropdown {
     position: relative;
 
+    button{
+        border: none;
+    }
+
     @media (max-width: 768px) {
         width: 100%;
         text-align: center;
@@ -192,26 +212,78 @@
         .dropdown-toggle {
             width: 100%;
             padding: 1rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            
+            &.active {
+                color: #4169E1;
+            }
         }
 
         .dropdown-menu {
             position: static;
             width: 100%;
             border: none;
+            background-color: #181818;
+            padding: 0.5rem 0;
+            opacity: 1;
+            visibility: visible;
+            display: none;
             border-top: 1px solid #333;
             border-bottom: 1px solid #333;
-            margin: 0.5rem 0;
-            display: none;
+
             &.show {
                 display: block;
                 animation: slideDown 0.3s ease forwards;
             }
+        }
+    }
 
+    // Keep hover only for desktop
+    @media (min-width: 769px) {
+        &:hover {
+            .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
         }
     }
 }
 
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #333;
+        color: #4169E1;
+    }
+    
+    @media (max-width: 768px) {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.85rem;
+        
+        &:not(:last-child) {
+            border-bottom: 1px solid #333;
+        }
+    }
+}
+
+// Remove duplicate .nav-dropdown and .dropdown-item definitions
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -230,15 +302,17 @@
     transition: background-color 0.3s;
     background-color: #4169E1;
     
-    &:hover {
-        background-color: #0040ff;
-    }
     @media (max-width: 768px) {
         text-align: center;
         background-color: transparent;
+        border-bottom: 1px solid #333;
 
         &:last-child {
             border-bottom: none;
+        }
+
+        &:hover {
+            background-color: #333;
         }
     }
 }
@@ -289,6 +363,8 @@
         cursor: pointer;
         font-size: 0.9rem;
         padding: 0.5rem;
+        width: 100%;
+        text-align: left;
 
         &:hover {
             color: #4169E1;
@@ -308,17 +384,8 @@
         transition: all 0.3s ease;
         transform: translateY(10px);
 
-        @media (hover: none) and (pointer: coarse) {
-            &.show {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            }
-        }
         &.show {
             opacity: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             visibility: visible;
             transform: translateY(0);
         }
@@ -332,6 +399,44 @@
             transform: none;
             border: none;
             margin-top: 0.5rem;
+            display: none;
+
+            &.show {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .dropdown-toggle {
+            text-align: center;
+        }
+    }
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #333;
+        color: #4169E1;
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+        padding: 1rem;
+        
+        &:not(:last-child) {
+            border-bottom: 1px solid #333;
         }
     }
 }
