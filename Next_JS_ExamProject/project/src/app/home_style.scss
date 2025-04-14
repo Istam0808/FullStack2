@@ -1,6 +1,11 @@
 @use "../assets/styles/initial.scss" as *;
 
-.home{
+.home {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    max-width: 100vw;
+    overflow-x: hidden;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 }

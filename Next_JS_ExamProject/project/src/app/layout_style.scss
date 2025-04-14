@@ -1,0 +1,50 @@
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        overflow-x: hidden; // Add this to prevent horizontal scroll
+    }
+}
+
+.main-content {
+    background-color: #181818;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%; // Add this
+    overflow-x: hidden; // Add this
+}
+
+@media (max-width: 768px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #181818;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 5rem 0; // Укорачиваем скролл по высоте
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3f3f46, #71717a); // Серо-фиолетовый градиент
+    border-radius: 10px;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #818cf8, #4f46e5); // Фиолетовый на hover
+    opacity: 1;
+    transform: scaleX(1.2); // Чуть увеличиваем по ширине
+}
