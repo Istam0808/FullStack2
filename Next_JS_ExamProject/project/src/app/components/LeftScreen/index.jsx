@@ -1,12 +1,17 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import './style.scss';
 import AvatarImg from '../../../assets/images/avatar.jpeg';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import ContactModal from '../ContactModal';
 
 function Left() {
+    const router = useRouter();
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     return (
-        
         <div className="profile-container">
             <div className="profile-header">
                 <div className="profile-image">
@@ -39,10 +44,20 @@ function Left() {
                 </p>
 
                 <div className="profile-buttons">
-                    <button className="btn btn-primary">Мои работы</button>
-                    <button className="btn btn-secondary">Написать мне</button>
+                    <button className="btn btn-primary" onClick={() => router.push('/mywork')}>Мои работы</button>
+                    <button 
+                        className="btn btn-secondary" 
+                        onClick={() => setIsContactModalOpen(true)}
+                    >
+                        Написать мне
+                    </button>
                 </div>
             </div>
+
+            <ContactModal 
+                isOpen={isContactModalOpen} 
+                onClose={() => setIsContactModalOpen(false)} 
+            />
         </div>
     );
 }

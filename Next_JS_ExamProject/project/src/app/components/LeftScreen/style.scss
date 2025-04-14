@@ -1,11 +1,11 @@
 @use "../../../assets/styles/globals.scss" as *;
 
 .profile-container {
-    padding: 2rem;
+    padding: 3rem;
     background-color: #202020;
     color: #fff;
     font-family: 'Inter', sans-serif;
-
+    text-align: center;
     @media (max-width: 768px) {
         padding: 1.5rem;
     }
@@ -51,13 +51,13 @@
     .btn {
         font-weight: 600;
         letter-spacing: 0.02em;
-        transition: transform 0.2s;
 
         @media (max-width: 768px) {
             width: 100%;
         }
-
+    
         &:hover {
+            transition:ease 0.2s;
             transform: translateY(-2px);
         }
     }
