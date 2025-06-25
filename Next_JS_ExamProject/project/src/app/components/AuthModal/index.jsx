@@ -1,16 +1,17 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { auth } from '@/firebase/config';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import './style.scss';
 
-function RegisterModal({ isOpen, onClose }) {
+function AuthModal({ isOpen, onClose, mode = 'login' }) {
     const [isClosing, setIsClosing] = useState(false);
     const [formData, setFormData] = useState({
-        name: '',
         email: '',
         password: '',
-        avatar: null
     });
+    const [error, setError] = useState('');
     const router = useRouter();
 
     const handleClose = () => {
@@ -18,35 +19,29 @@ function RegisterModal({ isOpen, onClose }) {
         setTimeout(() => {
             setIsClosing(false);
             onClose();
-            // Clear form data when modal closes
             setFormData({
-                name: '',
                 email: '',
                 password: '',
-                avatar: null
             });
+            setError('');
         }, 300);
     };
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({
-                    ...prev,
-                    avatar: reader.result
-                }));
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        localStorage.setItem('user', JSON.stringify(formData));
-        handleClose(); // Close modal
-        router.push('/profile');
+        setError('');
+        
+        try {
+            if (mode === 'register') {
+                await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+            } else {
+                await signInWithEmailAndPassword(auth, formData.email, formData.password);
+            }
+            handleClose();
+            router.push('/profile');
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     if (!isOpen) return null;
@@ -63,34 +58,10 @@ function RegisterModal({ isOpen, onClose }) {
                     </svg>
                 </button>
 
-                <form onSubmit={handleSubmit} className="register-form">
-                    <h2>Регистрация</h2>
+                <form onSubmit={handleSubmit} className="auth-form">
+                    <h2>{mode === 'login' ? 'Вход' : 'Регистрация'}</h2>
                     
-                    <div className="form-group">
-                        <label htmlFor="avatar">Фото профиля</label>
-                        <input 
-                            type="file" 
-                            id="avatar" 
-                            accept="image/*"
-                            onChange={handleImageChange}
-                        />
-                        {formData.avatar && (
-                            <img 
-                                src={formData.avatar} 
-                                alt="Preview" 
-                                className="avatar-preview"
-                            />
-                        )}
-                    </div>
-
-                    <input
-                        type="text"
-                        placeholder="Ваше имя"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        required
-                        className="form-input"
-                    />
+                    {error && <div className="error-message">{error}</div>}
 
                     <input
                         type="email"
@@ -111,7 +82,7 @@ function RegisterModal({ isOpen, onClose }) {
                     />
 
                     <button type="submit" className="submit-button">
-                        Зарегистрироваться
+                        {mode === 'login' ? 'Войти' : 'Зарегистрироваться'}
                     </button>
                 </form>
             </div>
@@ -119,4 +90,4 @@ function RegisterModal({ isOpen, onClose }) {
     );
 }
 
-export default RegisterModal;
+export default AuthModal;

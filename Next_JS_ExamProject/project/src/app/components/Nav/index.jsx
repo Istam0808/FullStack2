@@ -1,25 +1,20 @@
-'use client';
+"use client";
 import { useState, useEffect } from 'react'; // Add useEffect import
 import Link from 'next/link';
 import styles from './style.scss';
 import { useRouter } from 'next/navigation';
-import RegisterModal from '../RegisterModal';
+import AuthModal from '../AuthModal';
+
 
 function Nav() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const router = useRouter();
-
-    // Add handleProfileClick function
-    const handleProfileClick = () => {
-        const user = localStorage.getItem('user');
-        if (user) {
-            router.push('/profile');
-        } else {
-            setIsRegisterModalOpen(true);
-        }
-        setIsMobileMenuOpen(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [authMode, setAuthMode] = useState('login');
+    const openModal = (mode) => {
+        setAuthMode(mode);
+        setIsModalOpen(true);
     };
 
     const toggleMobileMenu = () => {
@@ -58,9 +53,9 @@ function Nav() {
 
                     <div className={`nav-items ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
                         <Link href="/" className="nav-link">ГЛАВНАЯ</Link>
-                        
+
                         <div className="nav-dropdown">
-                            <button 
+                            <button
                                 className="nav-link dropdown-toggle"
                                 onClick={toggleDropdown}
                                 onTouchEnd={(e) => e.preventDefault()}
@@ -68,14 +63,14 @@ function Nav() {
                                 СТАТЬИ
                             </button>
                             <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
-                                <button 
-                                    className="dropdown-item" 
+                                <button
+                                    className="dropdown-item"
                                     onClick={() => {
                                         router.push('/createsite');
                                         setIsMobileMenuOpen(false);
                                         setIsDropdownOpen(false);
                                     }}
-                                > 
+                                >
                                     Создание сайтов
                                 </button>
                                 <button className="dropdown-item">
@@ -89,13 +84,28 @@ function Nav() {
 
                         <Link href="/about" className="nav-link">ОБО МНЕ</Link>
                         <Link href="/advertising" className="nav-link">РЕКЛАМА</Link>
-                        <button onClick={handleProfileClick} className="nav-link">ПРОФИЛЬ</button>
+                        <Link href="/profile" className="nav-link">ПРОФИЛЬ</Link>
+                    </div>
+                    <div className="nav-buttons">
+                        <button
+                            className="auth-button"
+                            onClick={() => openModal('login')}
+                        >
+                            Войти
+                        </button>
+                        <button
+                            className="auth-button register"
+                            onClick={() => openModal('register')}
+                        >
+                            Регистрация
+                        </button>
                     </div>
                 </div>
             </nav>
-            <RegisterModal 
-                isOpen={isRegisterModalOpen} 
-                onClose={() => setIsRegisterModalOpen(false)}
+            <AuthModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode={authMode}
             />
         </>
     );
